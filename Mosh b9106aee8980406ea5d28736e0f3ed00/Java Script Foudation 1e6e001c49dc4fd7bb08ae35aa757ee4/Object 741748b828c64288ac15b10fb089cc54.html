@@ -1,0 +1,745 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Object</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="741748b8-28c6-4288-ac15-b10fb089cc54" class="page sans"><header><h1 class="page-title">Object</h1></header><div class="page-body"><nav id="048f8926-f333-48a3-b8c8-c0ec31f3dd9f" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4c162085-12ae-4404-9bde-794b655a7453">Basics</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9c1ec0b6-023a-49d0-b4b9-3d6c88c941cf">Factory Functions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0efb5e7e-8b86-4067-9530-9e6c5e131277">Constructor Functions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#91f6913f-5ea2-47c8-9b6a-f0c9d14a855b">!!!-three things about &#x27;new&#x27;!!!</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#920f5aca-cbb2-40da-befb-e2bebced1c80">Dynamic Nature of Objects</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eb44702a-65b6-46e9-93a1-edc893d5476e">Constructor Property</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a51110d2-86fd-4500-a325-2bf4bca52d29">Functions are Objects</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8787abd8-078b-41a1-8c6b-b25210b623c8">!!!-the .call method!!!</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7287eb58-b5cf-4972-a903-00b37ff2488c">Value vs Reference Types</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e1ce431e-c5e5-4b9b-9280-d16303307892">Enumerating Properties of an Object - 枚举对象</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#34ca27dd-db3c-446a-b476-3fefb48b2459">Cloning an Obejct</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d0e3be7a-940d-4683-a121-a64c104d8a3a">Garbage Collection</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#40fcf5b5-45ad-48ec-9179-2e4753fa517a">Build-in Object → Math</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5769073f-1552-4792-b3d8-79182f5c8d9a">Build-in Object String</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0c1bab47-4bde-48ea-b6ed-59784b97d6cd">Template Literals 模板语法</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7ac869ba-f9c6-4be9-ad32-260d9b57445b">Date</a></div></nav><h3 id="4c162085-12ae-4404-9bde-794b655a7453" class="">Basics</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="7c281f1f-b8bc-4b73-af43-950edc08692a" class="code code-wrap"><code><span class="token comment">//Object-oriented programming</span>
+
+<span class="token keyword">const</span> circle<span class="token operator">=</span><span class="token punctuation">{</span>
+	radius<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+	<span class="token comment">//属性值也可以是一个对象</span>
+	location<span class="token operator">:</span><span class="token punctuation">{</span>
+		x<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+		y<span class="token operator">:</span><span class="token number">1</span>
+	<span class="token punctuation">}</span>
+	isVisible<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+	<span class="token function-variable function">draw</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'draw'</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+circle<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="c67f75db-e0a1-472a-97ad-2fe73e33d5cf" class="bulleted-list"><li>类里面的function叫做method</li></ul><hr id="48b01e94-1e43-4cf8-b7ee-7fab1e1df92a"/><h3 id="9c1ec0b6-023a-49d0-b4b9-3d6c88c941cf" class="">Factory Functions</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="cd4f723b-7e42-4724-b9cb-07a4d6c43628" class="code code-wrap"><code><span class="token keyword">function</span> <span class="token function">createCircle</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        radius<span class="token operator">:</span> radius<span class="token punctuation">,</span>
+        isVisiable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">draw</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'draw'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="ce4469c8-f9dc-4d3f-8064-6743cb11890c" class="code code-wrap"><code><span class="token keyword">function</span> <span class="token function">createCircle</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        radius<span class="token punctuation">,</span>
+        location<span class="token operator">:</span> <span class="token punctuation">{</span>
+            x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            y<span class="token operator">:</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        isVisiable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'draw'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> circle1 <span class="token operator">=</span> <span class="token function">createCircle</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>circle1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="ccc41f57-d982-4dd7-ad9c-ec76bcb06e0a" class="bulleted-list"><li>改进1 如果参数名和里面的key名相等 我们可以简写<p id="97c8b41a-e9a1-4879-ae1a-288aeb12c3ab" class=""><code>radius:radius</code>→<code>radius</code></p></li></ul><ul id="6d70ca1e-c4c1-471d-848c-c6da9389a560" class="bulleted-list"><li>改进2 方法 <code>draw:function(){} </code>→ <code>draw(){}</code></li></ul><hr id="a759df3f-9f03-4797-8438-062dee506768"/><h3 id="0efb5e7e-8b86-4067-9530-9e6c5e131277" class="">Constructor Functions</h3><ul id="91d52409-13e9-4c28-a383-9049e0d6b4d3" class="bulleted-list"><li>在书写Constructor Functions的时候 注意使用Pascal Notation 即首字母大写</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="fa42394f-e25b-4e00-aa13-a1412240a3e8" class="code code-wrap"><code><span class="token comment">//Camel Notation:oneTwoThree</span>
+<span class="token comment">//Pascal Notation: oneTwoThree</span>
+<span class="token comment">//这里的this代表一个空的对象</span>
+<span class="token comment">//Objects in JavaScript are Dynamic 也就是我们随时可以给他们添加新属性</span>
+<span class="token keyword">function</span> <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">draw</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'newDraw'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> circle2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre><hr id="c84ea94d-84fd-4143-a8c3-80f00071bf04"/><h3 id="91f6913f-5ea2-47c8-9b6a-f0c9d14a855b" class="">!!!-three things about &#x27;new&#x27;!!!</h3><p id="021d5148-7583-42b1-9a92-0b214065a17e" class="">new three things:</p><ul id="a6adbcd6-4fb0-4c1f-a6cd-4ae0889dd4c1" class="bulleted-list"><li>1. new Create a new JavaScript Object Its like const x={},但是后台运行 所以你看不到</li></ul><ul id="57394712-aaa5-4b17-9c92-3d37b66281df" class="bulleted-list"><li>2. let this point to the new Object</li></ul><ul id="cd2bafb9-08af-40a7-b6c3-5ec4ca4f0fae" class="bulleted-list"><li>3. new will let the function return this Object return this. 但是这里我们不需要去书写它</li></ul><hr id="1e4be2ae-0128-4cd0-9f02-e4f893d1b2a2"/><h3 id="920f5aca-cbb2-40da-befb-e2bebced1c80" class="">Dynamic Nature of Objects</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="e9892da9-6a47-45ab-8e2a-81573d3fcf63" class="code code-wrap"><code><span class="token keyword">delete</span> circle<span class="token punctuation">.</span>color<span class="token punctuation">;</span>
+<span class="token keyword">delete</span> circle<span class="token punctuation">.</span>draw<span class="token punctuation">;</span></code></pre><ul id="d7550a35-6e5d-4df3-8f4d-74e2669bd3b9" class="bulleted-list"><li>Object is Dynamic 我们可以任意添加或者删除这个属性</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="04b6ec74-0ec7-44f2-9f11-223cee127bc0" class="code code-wrap"><code><span class="token keyword">const</span> circle<span class="token operator">=</span><span class="token punctuation">{</span>
+	radius<span class="token operator">:</span><span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+circle<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="91e560eb-7b29-4b8d-98bc-b1387944dbd8" class="bulleted-list"><li>注意 我们用const声明了circle 这时候我们不可以再重新给circle赋值另一个对象 但是因为Object is Dynamic, so we can add or remove new methods or properties to the Object</li></ul><hr id="aa6613be-2ea2-43b9-806e-3e57c97d1d41"/><h3 id="eb44702a-65b6-46e9-93a1-edc893d5476e" class="">Constructor Property</h3><ul id="96aee9d3-8c22-48f4-8b7f-2c3a086e22e3" class="bulleted-list"><li>Every Object in JS has a property called Constructor it reference to the function to create or construct this Object</li></ul><div id="afc7dad2-1599-496d-9157-058d69e9964a" class="column-list"><div id="3c1b5269-b853-4c3c-b27e-67a6f3be17b8" style="width:50%" class="column"><figure id="c2b4538c-d101-4a8e-98d6-93f0de45b1c2" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled.png"><img style="width:484px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled.png"/></a><figcaption>Create by factory function</figcaption></figure><p id="b9bcfb52-96a0-476c-86de-7b6df78ec35c" class="">For the factory function:</p><p id="1ded1c1b-0932-43df-99bc-fb0b5d1d9531" class="">Object(){} is a build-in JavaScript constrictor function</p></div><div id="4737fe1b-e9b0-4cd0-a72d-f7a589e3ca4d" style="width:50%" class="column"><figure id="b3784d44-4076-4518-ae4b-16447c64a027" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%201.png"><img style="width:510px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%201.png"/></a><figcaption>Create by Constructor Function</figcaption></figure><p id="460551b6-7ab0-438c-920c-d477a96427e2" class="">
+</p></div></div><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="caed381b-5024-4734-8cc8-9b30d3515383" class="code code-wrap"><code><span class="token keyword">let</span> x<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// let x=new Object();</span></code></pre><ul id="691b3873-1cb4-4f07-b7ff-3a216406cb05" class="bulleted-list"><li>当我们用{}的时候 其实它后台使用Object()为我们创建了一个新的对象</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="2f84cf42-f7af-4316-99b8-55ffd448d3ae" class="code code-wrap"><code>              <span class="token comment">//literals</span>
+<span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"",'',``</span>
+<span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">;</span>  <span class="token comment">//true false</span>
+<span class="token keyword">new</span> <span class="token class-name">Number</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//1,2,3,4...</span></code></pre><ul id="4ac97b3b-1970-403a-b557-deee30549a84" class="bulleted-list"><li>其实在我们使用&#x27;&#x27;&#x27; 字符串 true false, 1 2 3 4的时候 JS的后台为我们做了同样的事</li></ul><p id="cae4596b-ca9c-4dcd-bd32-7c80a9f70332" class="">take away:</p><ul id="9b52273a-74a6-410b-8265-2fc7cf495e79" class="bulleted-list"><li>Every Object has a constructor property</li></ul><ul id="b6dcf5c9-7a52-4c65-a8a8-732ec50f2bd2" class="bulleted-list"><li>constructor property is reference to the funtion that used to create this Object</li></ul><hr id="a9c01506-3979-48d5-aaf7-4fc0e94151a9"/><h3 id="a51110d2-86fd-4500-a325-2bf4bca52d29" class="">Functions are Objects</h3><figure id="2a6cd369-ccc0-461c-9308-a705cb9582c9" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%202.png"><img style="width:874px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%202.png"/></a><figcaption>functions are Objects</figcaption></figure><p id="b5520b54-72e6-4e84-96c7-139c36e67ccd" class="">↑这里的Circle其实是一个对象 我们可以看到代码提示中 紫色的是这个对象的method 蓝色的是property</p><div id="58227bbe-b8ce-4704-ab47-f5d8b68d33ae" class="column-list"><div id="49eea985-f0e4-412b-8f59-23ab3938ad9e" style="width:50%" class="column"><figure id="2238d139-f318-407f-a826-ecdc1edf8dda" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%203.png"><img style="width:286px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%203.png"/></a></figure></div><div id="855d8afe-5f1e-4cdd-8f35-c7b1d61cec08" style="width:50%" class="column"><ul id="a093467c-4049-40f3-99de-39dea7ddfce1" class="bulleted-list"><li>Circle.name 返回函数名</li></ul><ul id="4c9bfbd9-ac8c-4ca8-b38e-121b1a77f685" class="bulleted-list"><li>Circle.length 返回参数个数</li></ul></div></div><hr id="8a43dcd3-6526-4f29-b53b-9fa5923979ab"/><div id="04277a5e-8df8-4830-a6e7-62697db6a503" class="column-list"><div id="afb7010a-af3f-4bcf-99bb-f8e3917cd4a6" style="width:50%" class="column"><figure id="911302d2-f409-4d2e-9695-c634fe343743" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%204.png"><img style="width:532px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%204.png"/></a></figure></div><div id="8859106f-da51-412c-bc9e-255d24bc0e63" style="width:50%" class="column"><ul id="833c3326-c2f8-4370-a57b-fa6e35d7f625" class="bulleted-list"><li>这里如果我们查看Circle的constructor属性 我们会看到另一个build-in constructor → Function()</li></ul></div></div><hr id="d6feae3b-5568-40f4-af5f-d35ef9567658"/><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="4f6f645e-60de-44e1-82f1-208b5b7bd6a3" class="code code-wrap"><code><span class="token keyword">function</span> <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">draw</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'newDraw'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> CircleNature <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">"radius"</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+this.radius = radius;
+this.draw = function() {
+console.log('newDrawNature');
+}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> circleObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CircleNature</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+circleObject<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="779d3687-e2ae-402d-bdcc-45793b665c87" class="bulleted-list"><li>这里其实Circle 和 CircleNature两个&#x27;类&#x27; 或者说 构造方法是相同的! </li></ul><hr id="92d5c0f0-2acd-4fab-8927-f484afc4b68e"/><h3 id="8787abd8-078b-41a1-8c6b-b25210b623c8" class="">!!!-the .call method!!!</h3><figure id="58e99e00-a871-4a3b-923c-0d5a0193d5de" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%205.png"><img style="width:1220px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%205.png"/></a></figure><ul id="02888e10-e283-4d74-8869-096228bcfbe9" class="bulleted-list"><li>with Circle.call we can call a function</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="d6f538fb-4602-44a3-88a4-3da926fca59a" class="code code-wrap"><code><span class="token function">Circle</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="c2b26350-0159-4a7f-a099-f78b2e9c408d" class="bulleted-list"><li><mark class="highlight-yellow">这里的上下的两个表达式是相等的 当我们使用new的时候 系统会调用call方法 并且把{}空对象作为call方法的第一个参数 剩下的参数往后依次排列 我们在函数中用到的this就会指向这个空对象{}</mark></li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="07413a0a-b62a-48ce-b997-a2b91f2aebc0" class="code code-wrap"><code><span class="token keyword">const</span> another<span class="token operator">=</span><span class="token function">Circle</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">===</span>
+<span class="token function">Circle</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span></code></pre><ul id="2122e917-0f46-4eb5-8173-5145730da0d6" class="bulleted-list"><li>如果我们不用new关键字 那么这个this会指向window对象</li></ul><ul id="b5874b30-60bc-407b-8857-0314c3836217" class="bulleted-list"><li>所以call方法的第一个参数 其实就是这个函数内部的this所指向的对象</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="b7f5ebf6-baff-4831-9b12-cce29533a33e" class="code code-wrap"><code><span class="token function">Circle</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="272a51bd-d5ea-49ad-8e81-9b924d3643bf" class="bulleted-list"><li>apply方法和call方法是一样的 区别就是 后面以此传入的实参在apply方法中 都在一个<mark class="highlight-yellow">数组参数</mark>中</li></ul><hr id="0ee27601-1324-4a6d-aa22-57d1d0f08343"/><h3 id="7287eb58-b5cf-4972-a903-00b37ff2488c" class="">Value vs Reference Types</h3><figure id="f469b501-6a19-4394-96a6-bef2f5b67650" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%206.png"><img style="width:922px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%206.png"/></a></figure><hr id="8c81d44e-b678-4921-a39c-5c94b5323a2f"/><div id="fd773926-6547-435b-b233-e93701262690" class="column-list"><div id="56185b43-b378-46c6-96c9-b40cc29fb574" style="width:50%" class="column"><figure id="136dedfe-1973-43aa-b383-ad7cacac85d3" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%207.png"><img style="width:808px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%207.png"/></a></figure><ul id="e2a0e56c-9a4c-45db-9f14-b54fe57ac2b2" class="bulleted-list"><li>产生上述结果的原因是 Reference Types的值不是存储在变量的内存当中的 而是存储于变量的内存中 变量得到的只是这个reference value的地址</li></ul></div><div id="23ba4473-7b63-4675-906d-00e9a8fa3258" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="ec21a0d4-54ea-4317-9c4b-5b1035063d42" class="code code-wrap"><code><span class="token keyword">let</span> x<span class="token operator">=</span><span class="token punctuation">{</span>value<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> y<span class="token operator">=</span>x<span class="token punctuation">;</span>
+x<span class="token punctuation">.</span>value<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token comment">//这时候如果我们打印y.value得到的结果也是20</span></code></pre><p id="1059e286-23e2-4f19-a6a0-8f0ea8a756ac" class="">如果x是数组也一样</p></div></div><hr id="db80ba0c-0098-48ff-8c21-d8510cb67dca"/><p id="b8c727ff-d47a-4821-a48d-b7757ccacbba" class="">conclusion</p><ul id="ca97ec78-4e49-4ee1-b773-32883bdfc6d2" class="bulleted-list"><li>Primitives(also called Value types) are copied by their value</li></ul><ul id="99c3c8c2-917b-4852-8ce1-87e704c91e0a" class="bulleted-list"><li>Objects are copied by their reference</li></ul><hr id="52dc67d6-b0c7-4dc1-ad28-e9b978b1b627"/><p id="bf848e4b-b568-4fc5-8f52-fa08c0c5b716" class="">对比值传递 与 reference传递</p><div id="f4d91afc-d8d6-47e2-8453-42563d75f21d" class="column-list"><div id="7f2c2809-a56f-4cc2-b5e6-49ba42f9814e" style="width:50%" class="column"><figure id="f2ff870e-fe3f-4526-a905-9cb7e0dd70c5" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%208.png"><img style="width:402px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%208.png"/></a></figure></div><div id="d4546bfe-7df1-4389-a160-5022d5725ac1" style="width:50%" class="column"><figure id="6d5ae0c2-6c0b-4c88-9610-11b8bcf4f2c0" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%209.png"><img style="width:850px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%209.png"/></a></figure></div></div><hr id="f1c6098a-1640-495d-ad5a-1061dd928437"/><h3 id="e1ce431e-c5e5-4b9b-9280-d16303307892" class="">Enumerating Properties of an Object - 枚举对象</h3><ul id="c0460fb9-691c-493e-a8d1-55046a46822f" class="bulleted-list"><li>for...of can only be used on iterable like Array and maps Object is not iterable 所以我们不能用for of 来枚举Object</li></ul><div id="cd466bf6-9b82-4bde-83ba-72d1abf70a37" class="column-list"><div id="9651535a-bc57-4af3-8e7c-2a7dcd6c770d" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="fb7868ae-3d05-46d6-af84-6d3d6ccc2f5d" class="code code-wrap"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">of</span> circle<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p id="23bc57d4-7c2e-469e-9173-b12155ed3a8f" class="">TypeError: circle is not iterable</p></div><div id="2577a0e4-54b9-4c81-a977-3c97363f0799" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="12c0f32c-b503-4546-89b8-50031fc240ac" class="code code-wrap"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>circle<span class="token punctuation">)</span><span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></div><hr id="6468282f-4235-4046-b105-367915104f95"/><ul id="4f42895c-1e98-4184-b2b4-b82ad74ce54f" class="bulleted-list"><li>每次我们用大括号的时候{} 系统会调用 Object()方法</li></ul><ul id="b7360e0d-8f83-4b02-8291-26806cef91a8" class="bulleted-list"><li> <code>const x={value:1} </code>⇒ <code>const x=new Object() </code>⇒ <code>const x=Object.call({},?)</code></li></ul><hr id="879b1520-2e3b-41a0-be9f-157fad8a395b"/><p id="ddd6065a-15e0-4877-86a1-22df3e83a3aa" class="">Object.keys()</p><p id="7ebc77b9-e1eb-4178-80b3-14361d9bb4f5" class="">return the keys as a string array</p><div id="1fcb55f7-9221-4a70-b799-853cd6fd1767" class="column-list"><div id="2ce16c92-74df-456a-afb6-df6fd3ef2b25" style="width:50%" class="column"><figure id="0714a455-c494-4824-8b12-d046cbe145cd" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2010.png"><img style="width:1282px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2010.png"/></a></figure></div><div id="670a9714-1d23-42d7-8cfa-b5e117ce7f28" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="ead9feb5-2593-4321-af10-9e7d5ce33120" class="code code-wrap"><code>radius
+draw</code></pre></div></div><hr id="f1f784d5-70ba-464c-938d-a8fa41ca7726"/><p id="57e930a5-8431-44ea-80ac-ca6410d8150d" class="">Object.entries()</p><p id="6204a36a-3a90-48c0-a24c-d34778fb9c5e" class="">return each key-value pair as an array</p><p id="3068fc40-1613-4f0c-94ea-302fe5646668" class="">each entry is an array</p><div id="cfbe5c76-4443-42a7-91ac-82fe4cde1d9e" class="column-list"><div id="ce515495-7cc4-4fe7-a98c-62b6d32f06f5" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="0b3e41e6-8ad0-478d-b493-e8e2de1168a7" class="code code-wrap"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> entry <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>circle<span class="token punctuation">)</span><span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><div id="a7f4d665-15e0-4cff-b112-975ac2b9cde2" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="87771c48-167f-459e-81a1-799fc654f930" class="code code-wrap"><code><span class="token punctuation">[</span> <span class="token string">'radius'</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span> <span class="token string">'draw'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Function<span class="token operator">:</span> draw<span class="token punctuation">]</span> <span class="token punctuation">]</span></code></pre></div></div><hr id="f289fa18-b8bf-4e99-a68f-04bbcbc6aa0e"/><p id="05832682-f8a9-4b15-ab9b-095f3b0c2692" class="">判断一个Object中是否有这个property</p><ul id="fa8cf70d-b5f1-49ab-b71d-f49dbb234eb5" class="bulleted-list"><li>其中的radius是字符串</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="75687b64-2caa-4f5b-a12f-1892f55c967c" class="code code-wrap"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'radius'</span> <span class="token keyword">in</span> circle<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'yes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><hr id="0ab130f4-057e-43ad-b234-9fd8c0aba13f"/><p id="18c8864d-0be4-4b3d-897f-854177279860" class="">conclusion</p><ul id="9fc1b67f-b09a-40c7-9d2b-82c37bb18076" class="bulleted-list"><li>3 ways to enumerate objets:<ul id="41574048-d892-49c5-bfbd-3b9172a745b5" class="bulleted-list"><li>for in → instance[key]</li></ul><ul id="e24ca528-7da2-4649-bb0c-ed0377d50031" class="bulleted-list"><li>for of → Object.keys(instance)</li></ul><ul id="de9e33c8-5a99-4fd8-b10f-80fded5b1c6b" class="bulleted-list"><li>for of → Object.entries(instance)</li></ul></li></ul><ul id="16960978-7253-4c85-8cda-0932c0770a41" class="bulleted-list"><li>1 way to chek if a object has this property:<ul id="f56807d3-af89-4bd1-8af4-071229fb6799" class="bulleted-list"><li>if (&quot;string&quot; in instance)</li></ul></li></ul><hr id="b85b0c70-1ce0-4dcb-b324-bb161aa9e60f"/><h3 id="34ca27dd-db3c-446a-b476-3fefb48b2459" class="">Cloning an Obejct</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="cbad14f0-d16d-44cd-a87f-0bda197eb15b" class="code code-wrap"><code><span class="token keyword">const</span> circleClone <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> circle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    circleClone<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> circle<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>circleClone<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="0839eb55-2bab-48f7-ac53-6a19852ba3de" class="code code-wrap"><code><span class="token keyword">const</span> newClone <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> circle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> newClone2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">"yellow"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> circle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul id="6102354f-ac77-483a-bb45-d11dd1966b30" class="bulleted-list"><li>这个方法中 第二个参数 第三个参数可以无限往后写, 而它会把这些对象中的键值对保存放在第一个空对象中</li></ul><ul id="48e66d61-a2ea-4e41-9ab5-700e2bdec37c" class="bulleted-list"><li>第一个参数可以不是空对象</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="15b81d8a-a816-4c0c-9a30-f13efa1b2bbb" class="code code-wrap"><code><span class="token keyword">const</span> bestClone <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>circle <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bestClone<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="9463519d-b302-456a-944a-f182344c51d5" class="bulleted-list"><li>...将会读取这个circle中所有的键值对 并且放到这个大括号中</li></ul><hr id="eed7d313-a21c-4c5d-afc8-e7b93ab3b8e0"/><p id="006d29a2-ce01-4ca4-941f-71825aca9aec" class="">take away:</p><ul id="646d4a44-0e94-417e-921e-b1e48542afe8" class="bulleted-list"><li>Object assign方法将一个或者多个源对象的成员复制到新的对象中→我们可以用它克隆对象 或者合并对象</li></ul><ul id="604ac39b-b084-4175-a40f-d3976fbd382e" class="bulleted-list"><li>...circle 作用是展开对象 并且把对象中所有的成员放到{}中 </li></ul><hr id="547fe9ae-3539-4408-bd1a-d40da5947aca"/><h3 id="d0e3be7a-940d-4683-a121-a64c104d8a3a" class="">Garbage Collection</h3><p id="7568ad9f-0812-4c29-8088-9dc25578eba1" class="">JS有Garbage Collector → To find the variables and const that are no longer use and deallocate(解除分配) the memory the allocated to  them earlier</p><p id="7327472b-eb9b-464b-aac5-38abb895f199" class="">JS程序员无法控制 也不用担心垃圾内存回收</p><hr id="2c7e9041-7bdf-4681-85fe-d6367c0bd3cb"/><h3 id="40fcf5b5-45ad-48ec-9179-2e4753fa517a" class="">Build-in Object → Math</h3><p id="36f701bc-fee7-43c5-b489-605df73c7d37" class="">Google → JavaScript Math 第一个链接</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="445c9e53-fb1c-402c-9374-766ad7c9bfe3" class="code code-wrap"><code>Math is a built<span class="token operator">-</span><span class="token keyword">in</span> object that has properties and methods <span class="token keyword">for</span> mathematical constants and functions<span class="token punctuation">.</span> It’s not a <span class="token keyword">function</span> object<span class="token punctuation">.</span></code></pre><ul id="8a8df61c-b2b2-4489-9456-f59441386fec" class="bulleted-list"><li>你只需要记住在JS中有一个Build-in Object叫做Math 如果我遇到一些关于数学计算的问题 我就回来看看有什么能用上的方法</li></ul><p id="346a6ca3-bc58-42fa-94be-b22f18621b0a" class="">Example:</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="3ab98dd2-97f6-43b3-9cba-d32b77b7153a" class="code code-wrap"><code><span class="token keyword">function</span> <span class="token function">getRandomArbitrary</span><span class="token punctuation">(</span><span class="token parameter">min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="84601c32-10d6-4f1e-84da-d77098141a18" class="code code-wrap"><code>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">)</span>
+<span class="token comment">//3</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="934eed97-668c-4d71-992a-909ec9af301d" class="code code-wrap"><code>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="0788cf26-46d7-43a4-832e-7bf8fab9ff04" class="code code-wrap"><code>Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><hr id="a54f7632-d5fe-4982-83c4-fb3bf251f624"/><h3 id="5769073f-1552-4792-b3d8-79182f5c8d9a" class="">Build-in Object String</h3><p id="b085c72f-f90b-4e26-9b63-04c07b3f19c8" class="">JS中的两种String:</p><div id="4c260e32-2b44-4364-b20a-d465f136fb75" class="column-list"><div id="5e282408-f47b-48ec-8c8f-3e1aa65c9a10" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="8ce2d9d8-8686-4358-a4c9-bf1dff559f1a" class="code code-wrap"><code><span class="token comment">// String primitive</span>
+<span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">'Mosh'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//Sting Object</span>
+<span class="token keyword">const</span> another <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'Mosh Mosh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> another<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p id="b52c88dc-154e-424d-a489-01e69a04ec4a" class="">但是我们在输入 message.的时候 也会看到很多String的方法 这是因为JS会在我们操作primitive string的时候 默认把它转化成一个对象</p></div><div id="cf3f11a7-0669-4031-a2c1-e91c9d20c6f2" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="a8fdfd0c-fa4e-471c-be5c-4bf171696cc9" class="code code-wrap"><code><span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> restarting due to changes<span class="token operator">...</span>
+<span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> starting <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">node L11Object.js</span><span class="token template-punctuation string">`</span></span>
+string
+object
+<span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> clean exit <span class="token operator">-</span> waiting <span class="token keyword">for</span> changes before restart</code></pre></div></div><hr id="c4a82849-92ff-48e3-a630-75c40fbe53f9"/><p id="60977c32-f12d-4a4b-af56-f5d7f6fe931e" class="">Examples:</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="2e3f6693-ee0f-4005-bf6b-42bf10df7177" class="code code-wrap"><code><span class="token comment">//Sting Object</span>
+<span class="token keyword">const</span> another <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'Mosh    Mosh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>another<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="9a13e124-6eb9-4eaa-9da2-f17cc3e1b291" class="bulleted-list"><li>空格 算1个字符串长度</li></ul><ul id="60b3b9c5-535d-4411-94b7-31f87a41c087" class="bulleted-list"><li>应用 检测用户是否输入了足够的字符号串</li></ul><ul id="87a8940d-d5ae-49a8-8629-4f9dbd05b86f" class="bulleted-list"><li>这里我们可以用 another[0] 来读取字符串上每一位的单个字符</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="fdacab4f-8166-4f42-817a-67a156c3f5a0" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'my'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="31dc63da-eb01-4298-b521-34d59ede7983" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'this'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="76adc0e7-7da5-42fb-abfe-876e7c449cfe" class="bulleted-list"><li>大小写严格 不一致会返回false(case sensitive)</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="1e6c8b5e-6235-4b25-8b93-6ab7939b133c" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">endWith</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="0ad14022-4f2c-472d-8671-bb4cb08600d1" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'is'</span><span class="token punctuation">)</span></code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="1df74ce6-b7d1-49c0-ad7a-8124072085c9" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'old'</span><span class="token punctuation">,</span><span class="token string">'new'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="6bc01e3f-c56c-4f1b-93df-230a1bf8e352" class="bulleted-list"><li>请注意这不会改变原来的字符串 而只会返回一个新的字符串</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="0c4f81aa-225a-49b8-b307-ac0cee97ff1c" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ul id="c2915d16-2686-4f8a-bec0-0063c5c3d874" class="bulleted-list"><li>请注意 这也会返回新的全部大写的字符串</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="2949509b-245b-4f3a-bac4-1a528b4ef9d3" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+message<span class="token punctuation">.</span><span class="token function">trimLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 去除开头空格</span>
+message<span class="token punctuation">.</span><span class="token function">trimRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 去除结尾空格</span></code></pre><ul id="ef755757-27f2-4949-ba92-61362120127a" class="bulleted-list"><li>trim - 修剪</li></ul><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="aedf623a-8db2-44b6-8169-53ee3bcc1503" class="code code-wrap"><code>message<span class="token punctuation">.</span><span class="token function">slpit</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><hr id="ab2ade1c-0b48-4163-a93d-709621c26061"/><p id="687d4a8a-53e1-43e9-b245-72d7fe14bb25" class="">Escape notation - 转移符号</p><ul id="a3404739-a596-4949-9efb-1e977d74b8cd" class="toggle"><li><details open=""><summary>Escape notatio table</summary><div id="7fe69811-165b-491a-a6b2-ed67714706a5" class="collection-content"><h4 class="collection-title">Escape notation</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Code</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Output</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th></tr></thead><tbody><tr id="16c69c6c-75f7-44bd-a8d8-b5432ef0009d"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/XXX(where%20XXX%20is%201%E2%80%933%20octal%20digits;%20range%20of%200%E2%80%93377)%2016c69c6c75f744bda8d8b5432ef0009d.html">\XXX(where XXX is 1–3 octal digits; range of 0–377)</a></td><td class="cell-~DKr">ISO-8859-1 character / Unicode code point between <code>U+0000</code> and <code>U+00FF</code></td><td class="cell-HtF;"></td></tr><tr id="cf22eac0-1f7c-44b3-92db-c43f0ee265a6"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/&#x27;%20cf22eac01f7c44b392dbc43f0ee265a6.html">\&#x27;</a></td><td class="cell-~DKr">single quote</td><td class="cell-HtF;"></td></tr><tr id="77a336e2-9651-45a4-9d16-298b3051b6cb"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/Untitled%2077a336e2965145a49d16298b3051b6cb.html">\&quot;</a></td><td class="cell-~DKr">double quote</td><td class="cell-HtF;"></td></tr><tr id="59b62655-172b-4c2f-8ad4-8a6906a7c218"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/Untitled%2059b62655172b4c2f8ad48a6906a7c218.html">\\</a></td><td class="cell-~DKr">backslash</td><td class="cell-HtF;"></td></tr><tr id="40bf0be9-b690-4057-9b06-4ab87c01517c"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/n%2040bf0be9b69040579b064ab87c01517c.html">\n</a></td><td class="cell-~DKr">new line</td><td class="cell-HtF;"></td></tr><tr id="7694b12a-7f5c-456f-8685-7dc7eab1be3d"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/r%207694b12a7f5c456f86857dc7eab1be3d.html">\r</a></td><td class="cell-~DKr">carriage return</td><td class="cell-HtF;"></td></tr><tr id="cf780769-2f95-4513-8bc3-87e793350d2c"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/v%20cf7807692f9545138bc387e793350d2c.html">\v</a></td><td class="cell-~DKr">vertical tab</td><td class="cell-HtF;"></td></tr><tr id="730a6cd8-a513-4130-b0f2-8dc7c87fefe8"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/t%20730a6cd8a5134130b0f28dc7c87fefe8.html">\t</a></td><td class="cell-~DKr">tab</td><td class="cell-HtF;"></td></tr><tr id="aa57f7ef-0859-4a8d-99d4-7148f206c4e8"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/b%20aa57f7ef08594a8d99d47148f206c4e8.html">\b</a></td><td class="cell-~DKr">backspace</td><td class="cell-HtF;"></td></tr><tr id="e8be2e6d-0b3f-4f33-bdf2-06b5c6d556a3"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/f%20e8be2e6d0b3f4f33bdf206b5c6d556a3.html">\f</a></td><td class="cell-~DKr">form feed</td><td class="cell-HtF;"></td></tr><tr id="17c688ce-3f07-43b6-ae51-1c110e1345f8"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/uXXXX%20(where%20XXXX%20is%204%20hex%20digits;%20range%20of%200x0000%2017c688ce3f0743b6ae511c110e1345f8.html">\uXXXX (where XXXX is 4 hex digits; range of 0x0000–0xFFFF)</a></td><td class="cell-~DKr">UTF-16 code unit / Unicode code point between <code>U+0000</code> and <code>U+FFFF</code></td><td class="cell-HtF;"></td></tr><tr id="0895fa2d-1732-47c0-81f1-960ea7341e27"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/u%7BX%7D%20u%7BXXXXXX%7D(where%20X%E2%80%A6XXXXXX%20is%201%E2%80%936%20hex%20digits;%20r%200895fa2d173247c081f1960ea7341e27.html">\u{X} ... \u{XXXXXX}(where X…XXXXXX is 1–6 hex digits; range of 0x0–0x10FFFF)</a></td><td class="cell-~DKr">UTF-32 code unit / Unicode code point between <code>U+0000</code> and <code>U+10FFFF</code></td><td class="cell-HtF;"></td></tr><tr id="b78ad96f-1c6d-495a-b72b-444903a7c98b"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/xXX(where%20XX%20is%202%20hex%20digits;%20range%20of%200x00%E2%80%930xFF)%20b78ad96f1c6d495ab72b444903a7c98b.html">\xXX(where XX is 2 hex digits; range of 0x00–0xFF)</a></td><td class="cell-~DKr">ISO-8859-1 character / Unicode code point between <code>U+0000</code> and <code>U+00FF</code></td><td class="cell-HtF;"></td></tr><tr id="1e26bacb-7203-4a91-b72f-670adb776da3"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/Untitled%201e26bacb72034a91b72f670adb776da3.html">Untitled</a></td><td class="cell-~DKr"></td><td class="cell-HtF;"></td></tr><tr id="92b8ee38-78de-4359-b2b0-4eb3bd336e51"><td class="cell-title"><a href="Object%20741748b828c64288ac15b10fb089cc54/Escape%20notation%207fe69811165b491aa6b2ed67714706a5/Untitled%2092b8ee3878de4359b2b04eb3bd336e51.html">Untitled</a></td><td class="cell-~DKr"></td><td class="cell-HtF;"></td></tr></tbody></table></div></details></li></ul><hr id="fd5732f9-4c4c-4ba5-b749-5f5cabf535af"/><h3 id="0c1bab47-4bde-48ea-b6ed-59784b97d6cd" class="">Template Literals 模板语法</h3><p id="8161495b-93bc-4841-9eec-c0b07b45a594" class="">解决问题: 以下代码太丑的问题</p><div id="b625711f-e666-4b57-b584-30c80254f565" class="column-list"><div id="ec84aaed-f67b-4528-af79-3690f0d37e89" style="width:50%" class="column"><figure id="a36d34ca-a36d-4cc2-b1f2-191c540998de" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2011.png"><img style="width:944px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2011.png"/></a><figcaption>美化这个代码</figcaption></figure></div><div id="15739cb8-ede6-497b-ba97-afbf7e5598bc" style="width:50%" class="column"><figure id="f08db0c1-f932-46cf-8808-6794090713a5" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2012.png"><img style="width:1204px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2012.png"/></a><figcaption>Template 模板化</figcaption></figure><ul id="3febafc3-6fa2-4379-b6ec-4c49cc8675a5" class="bulleted-list"><li>应用场景就是邮件</li></ul><ul id="c73d9be2-6775-4f5c-8208-b9c663ae0c37" class="bulleted-list"><li>注意这个模板符号是~这个按键 不是单引号</li></ul></div></div><hr id="d62580a7-3723-492e-af53-df4259988514"/><figure id="8edaa9af-3f2b-4977-b7a6-0d64eae21c62" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2013.png"><img style="width:2880px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2013.png"/></a></figure><ul id="ed44aa6e-94e1-4ba5-8ae0-084c8f5994ad" class="bulleted-list"><li>template中同样可以放入变量 表达式</li></ul><div id="a2f81304-316c-4222-860b-f8ef24db143a" class="column-list"><div id="186d910a-5138-49df-9e28-45df1af4765f" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="71306c3c-dc19-41f4-bbf4-c1bc8f63d22a" class="code code-wrap"><code><span class="token keyword">let</span> senderName <span class="token operator">=</span> <span class="token string">'Jinhan'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> emailToRegina <span class="token operator">=</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Dear Regina,
+
+Hello and good day!
+
+Best Wishes,
+</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>senderName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>emailToRegina<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><div id="980de5ff-8e2f-4e6f-ad41-c54d8f0a6b1b" style="width:50%" class="column"><ul id="0d23ff5e-aab2-4b07-be3e-a223c5161412" class="bulleted-list"><li>注意事项 引用的变量要放在template的前面 否则会报错</li></ul><p id="4c70e013-ba0b-46f4-a6b9-b3a6ad7f97ed" class="">
+</p></div></div><hr id="c350e209-a742-4361-be17-7090aed12d1b"/><h3 id="7ac869ba-f9c6-4be9-ad32-260d9b57445b" class="">Date</h3><figure id="265fe85e-22fc-46f3-ab98-8fa9397866b2" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2014.png"><img style="width:1190px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2014.png"/></a><figcaption>date sample</figcaption></figure><ul id="482048f6-9494-453d-ade6-751fb5c4c4dc" class="bulleted-list"><li>传参的时候 可以去掉最后一个0 因为默认缺省就是0</li></ul><ul id="a01c53b1-1348-411f-aa4c-4a2d1cbaf1ff" class="bulleted-list"><li>instance.toDateString()得到Date的字符串 可打印输出</li></ul><ul id="7724dec7-8c72-47a6-afe7-7e1c7c10de91" class="bulleted-list"><li>instance.toTimeString()得到时间部分的字符串</li></ul><ul id="9a9da1b3-b0c1-477a-937c-7bf2e706e2e4" class="bulleted-list"><li>instance.toISOString()得到一个由大写T隔开的年月日和事件<p id="c0a234ee-8cf2-4ef3-bf08-8e0d4de615ea" class="">This is a standard ISO format commonly used on web applications</p><p id="fe7d99b6-fcc2-4da8-9c18-81b33d8531af" class="">我们通常用这种形式的时间 让数据在前端和后台之间传递</p></li></ul><hr id="45d354f1-3f93-44bc-92ee-b7f295d2e565"/><figure id="56a2524c-b30f-4395-bfcf-987a6e6ada3a" class="image"><a href="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2015.png"><img style="width:1446px" src="Object%20741748b828c64288ac15b10fb089cc54/Untitled%2015.png"/></a></figure><p id="4752477c-dba5-437b-ba60-ed2eefeef043" class="">另一个需要注意的是 我们在写系统方法的时候 这时候我们可以看到上下箭头 5/5 这代表了 我们可以给Date传递不同形式的参数</p><hr id="5fbd4a22-e7b1-4572-9989-ba72b0ecbf88"/><p id="f1d4dccf-2ff1-46f3-ac9d-36e1c50356b4" class="">
+</p></div></article></body></html>

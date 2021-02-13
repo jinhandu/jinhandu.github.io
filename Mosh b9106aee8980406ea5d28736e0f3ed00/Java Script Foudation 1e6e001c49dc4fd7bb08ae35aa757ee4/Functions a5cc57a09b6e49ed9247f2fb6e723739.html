@@ -1,0 +1,652 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Functions</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a5cc57a0-9b6e-49ed-9247-f2fb6e723739" class="page sans"><header><h1 class="page-title">Functions</h1></header><div class="page-body"><nav id="ec054846-fb66-4078-9b6f-20e2df9841d2" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8480237c-cb29-4b79-a783-39afc6325bb6">Function Declarations vs Expressions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4cd6831d-410b-4403-93d1-46b1767976c0">Hoisting</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#18877039-293d-4abd-aeff-75883640de38">Arguments (Dynamic)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d88d520a-a679-4762-8810-059ef957e420">The Rest Operator</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#33351c97-24e8-4184-aaa6-c18f76e00ea4">Default Value</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f8156692-a574-425d-8bd1-64ce544c9e8e">Getters and Setters </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5dfbb74c-796e-4a48-9654-7c83b53b6655">Try and Catch</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cce340f5-6687-4b57-bfe5-59bdd7b9656e">Local and Globle Scope</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6d336ae4-bd0f-4dac-9591-fff19164fd9a">Let vs Var</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#75910262-0e2d-4ee3-801f-cea0e3a83ad8">The &quot;this&quot; keywords</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f08fadff-6817-4b27-a201-e8de485cf7f6">Changing the Value of &#x27;&#x27;this&#x27;&#x27;</a></div></nav><h3 id="8480237c-cb29-4b79-a783-39afc6325bb6" class="">Function Declarations vs Expressions</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="eb6b9faf-594a-447f-b3f9-23124027bb99" class="code code-wrap"><code><span class="token comment">//Function Declaration</span>
+<span class="token keyword">function</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'walk'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//Anonymous Function Expression</span>
+<span class="token keyword">const</span> <span class="token function-variable function">run</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+
+<span class="token keyword">let</span> move <span class="token operator">=</span> run<span class="token punctuation">;</span>
+<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//Named Function</span>
+<span class="token keyword">const</span> <span class="token function-variable function">run</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span></code></pre><ul id="cbb51247-df4b-4c2d-b785-f30be4316ce4" class="bulleted-list"><li>functions are Object </li></ul><ul id="5693bb18-bcb9-4f0f-820a-99d965072e32" class="bulleted-list"><li>Declaration 没分号 Expression有分号</li></ul><ul id="f4c6c68f-0b1e-4d98-9f37-74a8a529dcca" class="bulleted-list"><li>Anonymous 匿名函数表达式 </li></ul><ul id="1a1857ae-0c79-4d43-bae5-6201cc803d36" class="bulleted-list"><li><code>let move = run;</code> 他和run对应的是内存中的同一个方法对象</li></ul><figure id="dc6c5bb6-b091-4470-ac90-213a166e80c6" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled.png"><img style="width:590px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled.png"/></a></figure><figure id="6d1a6542-d6fa-462e-bfe0-91923602d79d" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%201.png"><img style="width:756px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%201.png"/></a></figure><ul id="28ed1503-d499-435d-86a0-3ed114b171b4" class="bulleted-list"><li>关于named function expression 它后面的函数名只能通过bar访问到 外界无法直接访问baz</li></ul><hr id="e9293ff1-907c-4d14-9947-1d13d47bf72b"/><h3 id="4cd6831d-410b-4403-93d1-46b1767976c0" class="">Hoisting</h3><ul id="f28d87da-d94c-4fb4-a43e-67b79a30433a" class="toggle"><li><details open=""><summary>hoisting meaning</summary><p id="811af86f-e522-4dc0-a40e-5c82febc32f3" class="">Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.</p><p id="f1cb9cfc-c751-49bf-b229-82ab462ab8c2" class="">提升是一种JavaScript机制，在执行代码之前，将变量和函数声明移至其作用域的顶部。 不可避免地，这意味着无论在何处声明函数和变量，无论它们的作用域是全局的还是局部的，它们都将移至其作用域的顶部。</p></details></li></ul><p id="a5fc367b-a22d-4f5d-a905-fb1d161c1803" class="">Hoisting is to move the function declarations to the top of the field</p><ul id="517ddacc-5792-4c12-858e-d7e78b6392bf" class="bulleted-list"><li>用function declaration的时候 我们可以提前用这个方法 定义在后面 因为JS引擎会通过Hoisting机制把这个函数的declaration放到其作用域的最顶部</li></ul><ul id="718cfb0d-d47f-4b6c-abf1-a3cbad426769" class="bulleted-list"><li><mark class="highlight-yellow">如果我们用function expression 则一定要先定义再去使用</mark></li></ul><hr id="666d47a8-e1f0-4abe-99f8-d85ba0691817"/><h3 id="18877039-293d-4abd-aeff-75883640de38" class="">Arguments (Dynamic)</h3><figure id="37c8ecc6-5be4-4599-a57f-2d09b7534dd1" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%202.png"><img style="width:2698px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%202.png"/></a><figcaption>sum of all the parameters passed to this method</figcaption></figure><ul id="a0168dd7-9e88-476f-92c9-f61bc835b596" class="bulleted-list"><li>任何有.itetator属性队 都可以用for of 去遍历 argument 是一个 Object 但是他有iterator 所以可以 for of 遍历</li></ul><hr id="57516e3a-db65-4ce2-8ad8-efabe578c818"/><h3 id="d88d520a-a679-4762-8810-059ef957e420" class="">The Rest Operator</h3><figure id="3968b9f8-71f8-4454-97ea-309c340b27aa" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%203.png"><img style="width:1318px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%203.png"/></a><figcaption>better sum method</figcaption></figure><figure id="f1099b23-620b-4483-842e-8eef144fa0b9" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%204.png"><img style="width:1174px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%204.png"/></a></figure><ul id="43f10f8d-1e04-400c-9cca-7ea0086adad6" class="bulleted-list"><li>不要跟组合数组的seperate operator搞混了 这个是 用在函数参数中的</li></ul><ul id="8b69b634-c219-43a7-8985-ecb616bbd8f5" class="bulleted-list"><li><mark class="highlight-yellow">...restParameters必须是这个函数的最后一个形参 </mark></li></ul><hr id="24204a63-97d8-4f38-96b5-1cf731caf398"/><h3 id="33351c97-24e8-4184-aaa6-c18f76e00ea4" class="">Default Value</h3><figure id="939faa1d-ce97-4900-8db2-2686f5ab099e" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%205.png"><img style="width:2042px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%205.png"/></a><figcaption>classic way</figcaption></figure><figure id="a08415f5-b3a4-4e57-9e70-81b75617faea" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%206.png"><img style="width:1598px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%206.png"/></a><figcaption>better way ES6</figcaption></figure><figure id="4cd88b2f-df38-432d-94de-a4d87168abd6" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%207.png"><img style="width:2140px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%207.png"/></a></figure><ul id="32e171c7-5f35-4dfc-b07f-469fe62951aa" class="bulleted-list"><li>如果设置默认值的参数后面还有一个没有设置默认值的参数 那么我们可以在调用这个方法的时候 给已有默认值的参数传一个undefine</li></ul><ul id="b17d2cb1-89e5-425e-8125-4ce2b3856e83" class="bulleted-list"><li>尽量避免这种情况的产生 所以在给与参数默认值的时候 请尽量确保这是<mark class="highlight-yellow">最后一个参数, 或者 这个参数后面的参数都有默认值</mark></li></ul><hr id="fd5a6d2d-404a-4085-b594-2b7aaf8b9f5c"/><h3 id="f8156692-a574-425d-8bd1-64ce544c9e8e" class="">Getters and Setters </h3><figure id="774035b6-0734-42a1-a16e-30429a5aabe2" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%208.png"><img style="width:2020px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%208.png"/></a></figure><p id="9ff4c521-1247-4174-a19d-f6404bb04324" class="">↑这个对象存在的问题是:</p><ul id="08e29ef0-e3e3-4b1f-a7a5-e066d575fa3b" class="bulleted-list"><li>我无法通过.fullname 以属性的方式得到fullname</li></ul><ul id="2fb7cf49-ab8f-4793-a299-fd556f004d9c" class="bulleted-list"><li>如果我给fullname赋值 我们没法重写这个对象的first name 和last name</li></ul><figure id="ee9450ff-4c15-45eb-a848-797760a7dde5" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%209.png"><img style="width:2680px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%209.png"/></a></figure><ul id="37d34a92-8b4b-4f37-ac03-e506cd106298" class="bulleted-list"><li>在我们用谷歌Chrome打印这个对象的时候 fullname那是... 如果我们点击...<mark class="highlight-yellow">那么get函数会运行</mark> 然后我们可以看到fullName的值</li></ul><hr id="dd2c70ff-25fd-4c57-b36d-6204fe3de4c5"/><h3 id="5dfbb74c-796e-4a48-9654-7c83b53b6655" class="">Try and Catch</h3><ul id="bfa20c97-2bf3-4085-b119-c3bc3cb3dbb6" class="bulleted-list"><li>const e = new Error(); 这只是一个普通对象</li></ul><ul id="43e85ee2-5e11-4468-bc97-e681716245a6" class="bulleted-list"><li>throw new Error() 这是Exception 异常 也就是 代码中预期不会出现的东西</li></ul><figure id="63625232-dc71-411a-8dca-1a522b6a2f30" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%2010.png"><img style="width:2584px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%2010.png"/></a></figure><ul id="52f7b80a-871c-4cf2-9916-822a0101fb9a" class="bulleted-list"><li>语句执行到throw会跳出函数不会继续执行 然后这个函数会把错误信息传递给 调用这个函数时候的catch</li></ul><hr id="8fc3d216-ebbc-450c-a78c-1ec5bb911d6f"/><h3 id="cce340f5-6687-4b57-bfe5-59bdd7b9656e" class="">Local and Globle Scope</h3><ul id="49190357-29fa-4cc8-9d43-1eb351679121" class="bulleted-list"><li>let and const 的作用域{ }就是他们所在的block</li></ul><figure id="da70cadf-895c-4f74-8635-dee2636944d2" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%2011.png"><img style="width:2184px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/Untitled%2011.png"/></a></figure><ul id="df6f6d46-3ee1-4fb2-bd58-d0a0eb97bce5" class="bulleted-list"><li>同名的局部变量会重写global变量的值 但是尽量避免这种情况的出现</li></ul><ul id="fdd00d38-d3a2-4179-83c8-bb61b9a50271" class="bulleted-list"><li><mark class="highlight-yellow">尽量避免使用global变量! 因为很多函数内部会重写!</mark></li></ul><div id="d968503f-1a0f-4149-9a47-8ab47da0aeef" class="column-list"><div id="bd4b8360-c03d-4005-97df-81782598c825" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="759b7649-8ef2-4902-a788-ff4569bf5970" class="code code-wrap"><code><span class="token keyword">let</span> color<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> color <span class="token operator">=</span> <span class="token string">'blue1'</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">changeColor</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><div id="39c187ac-5406-4d9f-b767-a99d6e11e81a" style="width:50%" class="column"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="3bfc4397-1c7e-4f16-ad1a-981d7936d992" class="code code-wrap"><code><span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> restarting due to changes<span class="token operator">...</span>
+<span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> starting <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">node L11Object.js</span><span class="token template-punctuation string">`</span></span>
+blue1
+red
+<span class="token punctuation">[</span>nodemon<span class="token punctuation">]</span> clean exit <span class="token operator">-</span> waiting <span class="token keyword">for</span> changes before restart</code></pre></div></div><ul id="5fa179dd-bc40-4227-8597-ac4b79b58731" class="bulleted-list"><li>局部变量重写不会改变全局变量的值</li></ul><hr id="fc316f55-334e-460a-882b-302666288028"/><h3 id="6d336ae4-bd0f-4dac-9591-fff19164fd9a" class="">Let vs Var</h3><figure id="3fb50e38-cbae-4a32-b2b4-47cdd7467a13" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/D1C37045-99F5-4BB4-956C-411A99A855D4.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/D1C37045-99F5-4BB4-956C-411A99A855D4.png"/></a><figcaption>for循环括号里的let变量即使后面只有一条语句 其作用域也局限在for循环内部</figcaption></figure><figure id="5bb99009-c823-4e51-a832-d01c2736f2d2" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/A348826C-54C9-46CC-95E0-C9F7304F53F6.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/A348826C-54C9-46CC-95E0-C9F7304F53F6.png"/></a><figcaption>var的作用域是函数作用域 let的作用域是代码块作用域</figcaption></figure><figure id="7a4c4d6d-20e3-4312-8b0f-7bef8c81a222" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/16003D89-EFBA-4769-AE1F-485C7F82E43E.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/16003D89-EFBA-4769-AE1F-485C7F82E43E.png"/></a><figcaption>var声明的变量被加到了window上了</figcaption></figure><ul id="eda39fb1-fa7c-40b9-8b0f-78a906d44ea3" class="bulleted-list"><li>if 后面只有一条语句 let定义的变量也会限制在这个语句当中</li></ul><ul id="77ed4c7c-e483-4abf-80d8-115f5efb2f0f" class="bulleted-list"><li>使用var定义的变量 其作用域是函数scope let 定义的变量作用域是代码块</li></ul><ul id="f204df09-e749-451b-8b47-48b4722f5aa9" class="bulleted-list"><li>var 定义的全局变量会被放到window对象中 而成为其一个属性 let 不会</li></ul><ul id="ce35cd82-89fc-41f5-a6a8-28ae26a763a9" class="bulleted-list"><li>我们平时定义的function其实也被添加到windows 变量中去了</li></ul><ul id="a555e7ff-595b-4dc6-9095-bdacc7630522" class="bulleted-list"><li><mark class="highlight-yellow">总结 不要使用var</mark></li></ul><hr id="68bc832b-e85f-4fce-8fa4-159e236f3dc9"/><h3 id="75910262-0e2d-4ee3-801f-cea0e3a83ad8" class="">The &quot;this&quot; keywords</h3><ul id="22f98cd1-2493-463d-ad5c-45d085a9ed9e" class="bulleted-list"><li>mothod → obj</li></ul><ul id="23b6440e-2d91-4fdc-9a15-64b88b5be1c1" class="bulleted-list"><li>function → global(node)/window(Chrome)</li></ul><figure id="6521e196-b911-4ed5-bc0e-4ebe84b6ef2a" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/6F5484FB-033B-4553-BEAE-D9ABDE07CDBE.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/6F5484FB-033B-4553-BEAE-D9ABDE07CDBE.png"/></a></figure><figure id="d637f810-4cd4-44b1-bdfc-6c04ef3d1260" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/0AF0EFA1-9AD7-4464-BBE0-28CB24B68BB9.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/0AF0EFA1-9AD7-4464-BBE0-28CB24B68BB9.png"/></a></figure><figure id="4209dc6e-54fa-4419-8f56-7a2afdee50b1" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/FFEFCD8F-89C4-4EC9-AE3D-241DB7A232B0.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/FFEFCD8F-89C4-4EC9-AE3D-241DB7A232B0.png"/></a></figure><ul id="13cbb920-baa1-40f0-b1e0-04c6b80d38fc" class="bulleted-list"><li>如果this是在一个对象的method当中 那么this代表这个对象本身</li></ul><ul id="df358d4e-a8d8-4760-a56c-b4b1bab37012" class="bulleted-list"><li>如果this是在一个正常的函数当中 那么this代表的是global in Node window in Browser</li></ul><ul id="730e0df0-fc5f-488f-9189-ddd52f9801dd" class="bulleted-list"><li><mark class="highlight-yellow">如果我们在一个对象method使用一个回调方法，那么这个回调方法并不是函数的method而且一个function 这时候一个this代表 window</mark></li></ul><ul id="8fe37142-b92a-4e8e-b382-0453a1e6ef82" class="bulleted-list"><li>解决方案，可以将this作为参数传入回调方法</li></ul><hr id="d4cdf8e7-d676-4824-9468-7c1b2ba24c5a"/><h3 id="f08fadff-6817-4b27-a201-e8de485cf7f6" class="">Changing the Value of &#x27;&#x27;this&#x27;&#x27;</h3><figure id="c8128e4f-80ec-4592-bffc-59a8966e14a3" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/10B26873-D993-4CCA-921B-DD882BC53203.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/10B26873-D993-4CCA-921B-DD882BC53203.png"/></a><figcaption>设置一个常量self/that = this</figcaption></figure><figure id="af5e2944-d272-4d29-bfdd-787712fe4e62" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/F2212E33-316A-48A9-B365-D79B962EC6F5.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/F2212E33-316A-48A9-B365-D79B962EC6F5.png"/></a><figcaption>使用bind方法 将当前传入的this 与函数中的this永久绑定</figcaption></figure><figure id="f0979bca-c7c4-492b-8158-216046ff2398" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/E3DED16E-00FC-4A1A-8432-C109D814D898.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/E3DED16E-00FC-4A1A-8432-C109D814D898.png"/></a><figcaption>直接使用箭头函数 默认已经把this函数给做好了</figcaption></figure><figure id="8de68187-ea90-4728-9a88-5e122a64b14e" class="image"><a href="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/35EB21E1-0EB7-4E80-A8AB-F7FEE347436D.png"><img style="width:2436px" src="Functions%20a5cc57a09b6e49ed9247f2fb6e723739/35EB21E1-0EB7-4E80-A8AB-F7FEE347436D.png"/></a><figcaption>使用call apply bind方法传入this需要指向的参数</figcaption></figure><ul id="ea47dcdc-3bf8-478d-8d63-b2cafb2c2462" class="bulleted-list"><li>三种方式解决回调方法里的this与method里的this 不一样</li></ul><ul id="acd12d58-bc95-4feb-82f3-3b5715757542" class="bulleted-list"><li>第一种 设置一个常量const slef,that=this.</li></ul><ul id="50fb1662-1ff9-452b-a2a9-0b94786499d3" class="bulleted-list"><li>第二种 使用.bind(this) 使前面函数中的this与对象中的this永久绑定</li></ul><ul id="7d8f27c6-f3fa-4c47-8305-d8247ee885bb" class="bulleted-list"><li>第三种 使用ES6箭头方法 这个箭头方法从容器中继承了this的值 直接就能用this代表这个Object 了</li></ul><ul id="6737d0bf-142b-4945-8be1-31fea4ae0591" class="bulleted-list"><li>使用apply call 方法 第一个参数传入会让这个函数内的this指向这个对象</li></ul><ul id="eef30f69-a0f7-413a-9d77-1c86ad866ab0" class="bulleted-list"><li>bind()方法会让this和第一个参数永久绑定 并且返回一个新的函数</li></ul><hr id="b1be6317-3bfd-45fb-a978-f87852675c3b"/><p id="b9ba6a7f-5b47-4bfd-9c5f-8ad184d55f70" class="">
+</p></div></article></body></html>

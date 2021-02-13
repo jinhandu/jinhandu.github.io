@@ -1,0 +1,659 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>React</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="38c16218-49ca-4f51-85e1-c240989e7e77" class="page sans"><header><h1 class="page-title">React</h1></header><div class="page-body"><nav id="05360ecf-3112-4a3f-9783-4d2f64b7fab9" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1bab38bb-7bc4-4f24-a9ac-cb9639d9e0c8">what is react</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5aa686dc-bef4-48d9-ae4e-d6c9c0d7dd66">Setup</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#76e0f096-2227-44e4-a24d-717e42e47bca">Your first React APP</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6e8d1672-2eca-4109-94fe-7bcb39755565">Hello World!</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e509c097-d7ff-48d5-8c3c-ce9ae6902d21">Custom Configs eject</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a2e3b7b8-08d5-4319-be17-38b705971280">Full-stack Architecture</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0e3425a6-6e54-4c1c-98ee-262d6607f817">Bind</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#db1609a3-7731-465e-8204-3d80c2ae533a">Object Destructing</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#19ac2786-bb3d-4b8f-86ea-b3728163b721">Module</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#136d9d86-b24a-4d7a-9ceb-1b3f254c0a96">default module and named module</a></div></nav><h3 id="1bab38bb-7bc4-4f24-a9ac-cb9639d9e0c8" class="">what is react</h3><figure id="9e3df726-c6ff-4eb8-a932-14fc1aced3c5" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled.png"><img style="width:980px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled.png"/></a></figure><figure id="78d747ee-2f74-46d9-9377-32a85b500b2f" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%201.png"><img style="width:2328px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%201.png"/></a></figure><h3 id="5aa686dc-bef4-48d9-ae4e-d6c9c0d7dd66" class="">Setup</h3><figure id="e94228ec-bfd7-4c39-9e1f-c741db9b1c41" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%202.png"><img style="width:648px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%202.png"/></a></figure><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="4616bdae-630a-499e-87c2-4ff2671f4c83" class="code code-wrap"><code>sudo npm i <span class="token operator">-</span>g create<span class="token operator">-</span>react<span class="token operator">-</span>app@<span class="token number">1.5</span><span class="token number">.2</span></code></pre><p id="81330d30-51f4-45d1-a22f-10138c6289b7" class="">介绍了两个插件:</p><p id="6b27a540-914d-481d-9ff3-70f277eb9b35" class="">Simple React Snippets</p><p id="b6b8d31e-81a2-440e-90e7-92b25a6448f6" class="">Prettier</p><hr id="b05c5160-2ed2-4af5-99c7-88d9c9e59564"/><h3 id="76e0f096-2227-44e4-a24d-717e42e47bca" class="">Your first React APP</h3><figure id="1f3327ff-f950-4094-b01c-540609cded1f" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%203.png"><img style="width:550px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%203.png"/></a></figure><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="a96d056e-078d-4641-bd32-cace12f31f1b" class="code code-wrap"><code>create<span class="token operator">-</span>react<span class="token operator">-</span>app react<span class="token operator">-</span>app</code></pre><p id="e2863f0b-d189-417d-bff3-0b1158dbbcab" class="">这个程序自动安装以下东西</p><figure id="fa82a06a-fd08-4da7-945b-d0f747054492" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%204.png"><img style="width:1008px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%204.png"/></a></figure><p id="78574967-831e-4887-83b0-9f29909ab4ea" class="">如果我们想自己配置 使用这个↓</p><figure id="c548ac41-26f5-4fba-aebd-36f0b5065a1b" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%205.png"><img style="width:410px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%205.png"/></a></figure><figure id="6c08ba85-91e1-45e3-9ea1-1d8a0309277b" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%206.png"><img style="width:430px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%206.png"/></a></figure><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="723dc87d-634f-49d8-a152-b10561001e27" class="code code-wrap"><code>localhost<span class="token operator">:</span><span class="token number">3000</span></code></pre><p id="f5050fe5-afd5-430d-9321-b24bf0d56c3e" class="">
+</p><figure id="ceecef70-6c92-4258-9ad1-a4a4e4cdb5b7" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%207.png"><img style="width:818px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%207.png"/></a></figure><ul id="a42f4e8d-9cd4-42ab-bbb6-441628b50a2d" class="bulleted-list"><li>the container for react app</li></ul><figure id="f2bed506-a9c8-4207-8bc8-baa661321415" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%208.png"><img style="width:2336px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%208.png"/></a></figure><ul id="fc299632-6394-4c34-bf38-436485845982" class="bulleted-list"><li>JSX</li></ul><p id="3da00b4c-aa51-470a-84c3-7107be660aec" class="">使用视频中的方法无法看到template</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="a3982398-5644-49bd-95c0-cf49c9f49be1" class="code code-wrap"><code>npm uninstall <span class="token operator">-</span>g create<span class="token operator">-</span>react<span class="token operator">-</span>app</code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="080b9ea2-8090-4168-9582-98cf644c1cdb" class="code code-wrap"><code>rm <span class="token operator">-</span>rf <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin<span class="token operator">/</span>create<span class="token operator">-</span>react<span class="token operator">-</span>app</code></pre><figure id="3c080e56-8447-4fd6-bfb2-0a895701722d"><a href="https://stackoverflow.com/questions/59188624/template-not-provided-using-create-react-app" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Template not provided using create-react-app</div><div class="bookmark-description">TLDR: Uninstall the global package using npm uninstall -g create-react-app and generate new react apps using npx create-react-app app. You&#x27;re using an older version of create-react-app that you have installed globally using npm. The create-react-app command invokes this global package.</div></div><div class="bookmark-href"><img src="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196" class="icon bookmark-icon"/>https://stackoverflow.com/questions/59188624/template-not-provided-using-create-react-app</div></div><img src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded" class="bookmark-image"/></a></figure><p id="9c2742ed-484d-4951-aeeb-7dc08cd34bb1" class="">New way to start a projext</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="1f762f2d-71a9-44f3-94a2-fdec0df50db6" class="code code-wrap"><code>npx create<span class="token operator">-</span>react<span class="token operator">-</span>app my<span class="token operator">-</span>app</code></pre><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="d021caf4-f8a8-410e-8093-5731f17a1462" class="code code-wrap"><code>Noel Tanner
+<span class="token number">1</span>年前（修改过）
+If you <span class="token keyword">get</span> <span class="token keyword">this</span> error<span class="token operator">:</span> <span class="token string">""</span>npm <span class="token constant">ERR</span><span class="token operator">!</span> missing script<span class="token operator">:</span> start"  when trying to run<span class="token punctuation">.</span> 
+
+You might have a old global install <span class="token keyword">of</span> npm that's causing a problem<span class="token punctuation">.</span> As <span class="token keyword">of</span> <span class="token number">12</span><span class="token operator">/</span><span class="token number">19</span> npm does not support global installs<span class="token punctuation">.</span>
+
+Uninstall the <span class="token keyword">package</span> using<span class="token operator">:</span>
+npm uninstall <span class="token operator">-</span>g create<span class="token operator">-</span>react<span class="token operator">-</span>app 
+
+Some osx<span class="token operator">/</span>Linux users may need to go a bit further to remove the old npm<span class="token punctuation">.</span> Do so <span class="token keyword">with</span> <span class="token keyword">this</span> command<span class="token operator">:</span>
+rm <span class="token operator">-</span>rf <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin<span class="token operator">/</span>create<span class="token operator">-</span>react<span class="token operator">-</span>app
+
+This is now the only supported method <span class="token keyword">for</span> generating a project<span class="token operator">:</span>
+npx create<span class="token operator">-</span>react<span class="token operator">-</span>app my<span class="token operator">-</span>app 
+
+With that done cd and start it<span class="token operator">:</span>
+cd my<span class="token operator">-</span>app
+npm start
+
+Source<span class="token operator">:</span> https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>create<span class="token operator">-</span>react<span class="token operator">-</span>app<span class="token punctuation">.</span>dev<span class="token operator">/</span>docs<span class="token operator">/</span>getting<span class="token operator">-</span>started
+Now you're clear <span class="token keyword">of</span> the error and ready to jump into the browser<span class="token punctuation">.</span> Hope that helps someone<span class="token operator">!</span></code></pre><figure id="bdcb299d-370c-4d33-a3b6-3154b0d11cdd" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%209.png"><img style="width:2738px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%209.png"/></a></figure><ul id="36124209-62a7-4700-8f34-56db0adc065a" class="bulleted-list"><li>this file is to server the access to local cache</li></ul><h3 id="6e8d1672-2eca-4109-94fe-7bcb39755565" class="">Hello World!</h3><p id="05703601-91e7-4678-8da8-9f5c2616f912" class="">from scratch 从头开始</p><p id="084ab582-1bc1-4caf-86d0-7a370f8ca810" class="">
+</p><figure id="c774842a-76b4-4cdb-b59d-3e4a93e87ae4" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2010.png"><img style="width:1214px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2010.png"/></a></figure><p id="ad0dd7fb-2d67-443d-8f52-b7aaf1069057" class="">为什么我们需要import React的原因是 bable在转译的时候会用到这个方法</p><p id="8ed04356-04c0-46c4-9533-481aa4d4ee8f" class="">
+</p><figure id="3fae2118-8ce0-477e-bbad-4ba680d9e83e" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2011.png"><img style="width:1906px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2011.png"/></a></figure><ul id="b75295f4-6e85-4746-b130-e55aa34bbc58" class="bulleted-list"><li>Mac快捷键</li></ul><p id="97d45ae4-d684-432e-837d-5422fb3edb18" class="">index.js</p><figure id="46cc6bae-ae1e-463a-b21d-9e716b1a1dcc" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2012.png"><img style="width:1814px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2012.png"/></a></figure><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="c3c346cb-ef27-479b-af8b-1946487e0f16" class="code code-wrap"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span> Hello World <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><hr id="3b876505-d57d-430c-bed9-435e1c2d2ad5"/><h3 id="e509c097-d7ff-48d5-8c3c-ce9ae6902d21" class="">Custom Configs eject</h3><p id="bf23a7c5-5057-411f-8d4c-1738f36b34da" class="">
+</p><figure id="81d60619-2b2c-4aa4-8bb3-b76bfe97c92f" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2013.png"><img style="width:690px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2013.png"/></a></figure><p id="bc03eea6-b68f-47bd-a71c-bf1e70a231cf" class="">在这里 我们可以看到具体的命令</p><figure id="f2cbf5cc-ce12-463f-9334-c00d79d02fb2" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2014.png"><img style="width:2880px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2014.png"/></a></figure><p id="3006098c-835b-4e4d-a1a8-6d16fb0f4b1e" class="">使用eject之后 你就可以看到所有的dependencies 依赖</p><h3 id="a2e3b7b8-08d5-4319-be17-38b705971280" class="">Full-stack Architecture</h3><p id="019b52cc-5990-4b00-9c56-23981156d59b" class="">
+</p><figure id="9be6ac01-11f0-41bb-b591-65b48f5abadf" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2015.png"><img style="width:1894px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2015.png"/></a></figure><p id="1f7495a6-d84a-4e5f-8e9c-c33bc60d4429" class="">Use HTTP between Front-end and Back-end</p><p id="fafa8563-6326-47fa-8ff2-30cd4db5d9a0" class="">
+</p><figure id="804cec15-3aca-4a03-82b6-2203bc846c1c" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2016.png"><img style="width:2878px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2016.png"/></a></figure><hr id="cb28f843-d678-4980-9515-8916e5c40a2e"/><h3 id="0e3425a6-6e54-4c1c-98ee-262d6607f817" class="">Bind</h3><figure id="da421081-6c06-4130-9628-b9d6508a733c" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2017.png"><img style="width:2880px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2017.png"/></a></figure><p id="cc7c7b4d-25ee-4d43-b201-fa47a02140fc" class="">With Bind we can set the value of this permenantly</p><figure id="f3d08d83-0d1e-4cab-8dcf-d9f5aaa971b8" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2018.png"><img style="width:276px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2018.png"/></a></figure><p id="ba52ceca-6002-4c07-918b-8cd5eaad3019" class="">这里我们使用walk调用的bind方法 bind会返回一个新的walk方法 并且新方法中的this与person对象永久绑定</p><hr id="e333fd48-7238-4640-8a41-2e0ee060f744"/><h3 id="db1609a3-7731-465e-8204-3d80c2ae533a" class="">Object Destructing</h3><p id="fdbdf5c1-5fcd-4065-b861-a76772d576a5" class="">
+</p><figure id="eb59a75a-4176-4e21-bcff-83ad506fc3bf" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2019.png"><img style="width:1420px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2019.png"/></a></figure><p id="a029b1af-3472-49fe-925f-49ab6929e14c" class="">上下两行是完全相等的</p><p id="ea87af23-02a5-4193-a696-fd3492f918c2" class="">
+</p><figure id="bf0c9828-c0e6-405d-a8d0-54607c8aa56d" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2020.png"><img style="width:1182px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2020.png"/></a></figure><ul id="eb2c9617-23fe-4a6d-b823-1e087b5da390" class="bulleted-list"><li>为变量设置新的名字</li></ul><hr id="21022d0c-47e8-411a-ad24-c3c6505429b0"/><h3 id="19ac2786-bb3d-4b8f-86ea-b3728163b721" class="">Module</h3><figure id="785bb379-4b12-47fc-b36b-90e40ff1c3dd" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2021.png"><img style="width:1158px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2021.png"/></a></figure><hr id="ed3e9ce3-595b-4cf3-a886-0884a007cf83"/><h3 id="136d9d86-b24a-4d7a-9ceb-1b3f254c0a96" class="">default module and named module</h3><p id="ad7334a2-15bc-457a-b0f2-1df394caf0ad" class="">export 多个module</p><figure id="62bda927-ba7b-4aa3-9bc4-787444351840" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2022.png"><img style="width:2880px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2022.png"/></a></figure><figure id="eb428d21-ccb1-42f4-a72b-2bd8b55cea1b" class="image"><a href="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2023.png"><img style="width:2880px" src="React%2038c1621849ca4f5185e1c240989e7e77/Untitled%2023.png"/></a></figure></div></article></body></html>
