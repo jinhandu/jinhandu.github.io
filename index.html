@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIU Lab</title>
+    <link rel="stylesheet" href="public/frameworks/bootstrap-4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/frameworks/normalize/normalize.css">
+    <link rel="stylesheet" href="public/frameworks/animate/animate.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+    <!-- Navagation -->
+    <nav class="navbar navbar-expand-lg navbar-light position-fixed" id="main-nav">
+        <div class="container nav-container nav-container--small-padding">
+            <!-- logo icon -->
+            <a class="navbar-brand animate__animated animate__lightSpeedInLeft" href="#">
+                <icon class="icon-logo"> <img class="icon-logo__logo-img" src="public/images/logo/oceco-logo.svg"
+                        alt="">
+                </icon>
+            </a>
+            <!-- menu bar  -->
+            <button class="navbar-toggler navbar-toggler-primary" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span id="nav-menu-title">MENU</span>
+                <svg class="icon-menubar icon--white">
+                    <use xlink:href="./public/images/logo/bars-solid-xml.svg#bars-solid"></use>
+                </svg>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-items" href="#about-us">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-items" href="#sec2">USAGE SCENARIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-items " href="#sec3">SCOOTERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-items" href="#sec4">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-items" href="#sec5">ORDER NOW!</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- carousel -->
+    <div id="index-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="2000">
+                <img src="./public/images/index-bg/index-bg-0.jpg" class="d-block " alt="...">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <img src="./public/images/index-bg/index-bg-1.jpg" class="d-block " alt="...">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <img src="./public/images/index-bg/index-bg-2.jpg" class="d-block " alt="...">
+            </div>
+        </div>
+    </div>
+
+    <div class="index-slogan">
+        <div class="index-slogan__title-container">
+            <p class="index-slogan__title">Smart,Green,Safety,Funcy</p>
+        </div>
+        <div class="index-slogan__button-container">
+            <a class="index-slogan__btn" href="#about-us">TELL ME MORE</a>
+        </div>
+    </div>
+
+    <div id="about-us"></div>
+    <div class="container">
+        <h2>ABOUT US</h2>
+        <p>OCECO is a Swedish Whole Sale brand building innovative green, affordable, multi-purpose electric vehicles
+            designed with latest technology for anyone to ride. Our products are selected for the smart green tech
+            concept for the best combination of safety and fun.</p>
+        <h3 class="text-center">Join Us On Social Media↓</h3>
+    </div>
+
+    <div class="container container-icons">
+        <div class="row">
+            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
+                <div class="icon-container ">
+                    <svg class="icon icon--facebook">
+                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#facebook-square-brands"></use>
+                    </svg>
+                </div>
+                <p class="icon-link__text">Facebook</p>
+            </a>
+            <a class="icon-link  col-12 col-sm-4" href="https://www.instagram.com/oceco.se/" target="blank">
+                <div class="icon-container">
+                    <img class="icon icon--instagram" src="./public/images/icons/icon-ins.svg" alt="">
+                </div>
+                <p class="icon-link__text">Instagram</p>
+            </a>
+            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
+                <div class="icon-container">
+                    <svg class="icon icon--shop">
+                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#store-solid"></use>
+                    </svg>
+                </div>
+                <p class="icon-link__text">Online Shop</p>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="instagram"></div>
+    <div class="vh2" id="sec0">sec0</div>
+    <div class="vh2" id="sec1">sec1</div>
+    <div class="vh2" id="sec2">sec2</div>
+    <div class="vh2" id="sec3">sec3</div>
+    <div class="vh2" id="sec4">sec4</div>
+
+    <script src="public/frameworks/jquerry-3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="public/frameworks/bootstrap-4.6.0/js/bootstrap.js"></script>
+    <script src="public/js/index-script.js"></script>
+
+
+</body>
+
+</html>
