@@ -44,10 +44,10 @@
                         <a class="nav-link main-nav-items" href="#usage-scenario">USAGE SCENARIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link main-nav-items" href="#sec4">SERVICES</a>
+                        <a class="nav-link main-nav-items" href="#services">SERVICES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link main-nav-items" href="#sec5">ORDER NOW!</a>
+                        <a class="nav-link main-nav-items" href="#order-now">ORDER NOW!</a>
                     </li>
                 </ul>
 
@@ -63,13 +63,14 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="2000">
+            <div class="carousel-item active" data-interval="3000">
                 <img src="./public/images/index-bg/index-bg-0.jpg" class="d-block " alt="...">
             </div>
-            <div class="carousel-item" data-interval="2000">
+            <div class="carousel-item" data-interval="3000">
                 <img src="./public/images/index-bg/index-bg-1.jpg" class="d-block " alt="...">
             </div>
-            <div class="carousel-item" data-interval="2000">
+            <!--  -->
+            <div class="carousel-item" data-interval="3000">
                 <img src="./public/images/index-bg/index-bg-2.jpg" class="d-block " alt="...">
             </div>
         </div>
@@ -85,43 +86,14 @@
         </div>
     </div>
 
-
     <!-- About Us -->
     <div id="about-us"></div>
     <div class="container">
         <h2>ABOUT US</h2>
-        <p>OCECO is a Swedish Whole Sale brand building innovative green, affordable, multi-purpose electric vehicles
+        <p class="about-us-text">OCECO is a Swedish Whole Sale brand building innovative green, affordable,
+            multi-purpose electric vehicles
             designed with latest technology for anyone to ride. Our products are selected for the smart green tech
             concept for the best combination of safety and fun.</p>
-        <h3 class="text-center">Join Us On Social Media↓</h3>
-    </div>
-
-    <!-- Social Media Icon -->
-    <div class="container container-icons">
-        <div class="row">
-            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
-                <div class="icon-container ">
-                    <svg class="icon icon--facebook">
-                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#facebook-square-brands"></use>
-                    </svg>
-                </div>
-                <p class="icon-link__text">Facebook</p>
-            </a>
-            <a class="icon-link  col-12 col-sm-4" href="https://www.instagram.com/oceco.se/" target="blank">
-                <div class="icon-container">
-                    <img class="icon icon--instagram" src="./public/images/icons/icon-ins.svg" alt="">
-                </div>
-                <p class="icon-link__text">Instagram</p>
-            </a>
-            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
-                <div class="icon-container">
-                    <svg class="icon icon--shop">
-                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#store-solid"></use>
-                    </svg>
-                </div>
-                <p class="icon-link__text">Online Shop</p>
-            </a>
-        </div>
     </div>
 
     <!-- Scooters -->
@@ -138,6 +110,7 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
@@ -150,6 +123,7 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
@@ -162,6 +136,7 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
@@ -174,6 +149,7 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
@@ -186,6 +162,7 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
@@ -198,16 +175,15 @@
                         </div>
                     </div>
                     <p class="scooter-name">Name</p>
+                    <p class="scooter-type">Two Wheels Electric Scooter</p>
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-
         </div>
-
     </div>
 
     <!-- Index Video -->
-    <video autoplay muted loop class="index-video" src="./public/images/scooters/OC3R/OC3R-V0.MOV"></video>
+    <video controls autoplay muted id="index-video" src=""></video>
 
     <!-- Usage Scenario -->
     <div id="usage-scenario"></div>
@@ -283,6 +259,112 @@
         </div>
     </div>
 
+    <!-- Service -->
+    <div id="services"></div>
+    <section class="page-section bg-light">
+        <div class="container">
+            <h2 class="service-title-text">SERVICES</h2>
+            <p class="service-title-description">OCECO will make your shopping comfy and secure</p>
+            <div class="row">
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#shopping-cart-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">E-Commerce</p>
+                    <p class="service-text-description">Place your order</p>
+                </div>
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#laptop-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">Pack and Proceed Your Order
+                    </p>
+                    <p class="service-text-description">OCECO will proceed and pack your scooter nicely</p>
+                </div>
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#lock-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">Delivery Security</p>
+                    <p class="service-text-description">We make sure that your Scooters will be delivered to you with
+                        full
+                        protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact-->
+    <div id="order-now"></div>
+    <section class="bg--map">
+        <div class="container">
+            <h2 class="oder-now-title-text">ORDER NOW</h2>
+            <h3 class="oder-now-title-description ">Please fill-in the order information below, our sales
+                manager will contact you within 24 hours</h3>
+            <form action="https://formspree.io/f/mpzovoqv" id="contactForm" name="sentMessage" method="POST">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="name" type="text" name="order-name"
+                                placeholder="Your Name *" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="email" type="email" name="odfer-email"
+                                placeholder="Your Email *" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="phone" type="tel" name="order-phone"
+                                placeholder="Your Phone *" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <textarea class="form-control order-now-form order-now-form--textarea" type="address"
+                                id="message" name="order-address" placeholder="Your Shipping Address *"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="index-slogan__btn btn-order-now"> SEND ORDER </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Social Media Icon -->
+    <div class="container container-icons">
+        <h3>Find US on Social Media</h3>
+        <div class="row">
+            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
+                <div class="icon-container ">
+                    <svg class="icon icon--facebook">
+                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#facebook-square-brands"></use>
+                    </svg>
+                </div>
+                <p class="icon-link__text">Facebook</p>
+            </a>
+            <a class="icon-link  col-12 col-sm-4" href="https://www.instagram.com/oceco.se/" target="blank">
+                <div class="icon-container">
+                    <img class="icon icon--instagram" src="./public/images/icons/icon-ins.svg" alt="">
+                </div>
+                <p class="icon-link__text">Instagram</p>
+            </a>
+            <a class="icon-link  col-12 col-sm-4" href="https://www.facebook.com/oceco.se" target="blank">
+                <div class="icon-container">
+                    <svg class="icon icon--shop">
+                        <use xlink:href="./public/images/icons/fb-ins-shop.svg#store-solid"></use>
+                    </svg>
+                </div>
+                <p class="icon-link__text">Online Shop</p>
+            </a>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div class="container">
         <p class="footer-text">Copyright © www.oceco.se 2021</p>
@@ -290,8 +372,7 @@
     <script src="public/frameworks/jquerry-3.6.0/jquery-3.6.0.min.js"></script>
     <script src="public/frameworks/bootstrap-4.6.0/js/bootstrap.js"></script>
     <script src="public/js/index-script.js"></script>
-
-
+    <script src="//code.tidio.co/d9hsnt4yi0vivdnr1r2oqjs1qadnrnpm.js" async></script>
 </body>
 
 </html>

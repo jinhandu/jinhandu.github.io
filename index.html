@@ -44,10 +44,10 @@
                         <a class="nav-link main-nav-items" href="#usage-scenario">USAGE SCENARIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link main-nav-items" href="#sec4">SERVICES</a>
+                        <a class="nav-link main-nav-items" href="#services">SERVICES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link main-nav-items" href="#sec5">ORDER NOW!</a>
+                        <a class="nav-link main-nav-items" href="#order-now">ORDER NOW!</a>
                     </li>
                 </ul>
 
@@ -259,6 +259,83 @@
         </div>
     </div>
 
+    <!-- Service -->
+    <div id="services"></div>
+    <section class="page-section bg-light">
+        <div class="container">
+            <h2 class="service-title-text">SERVICES</h2>
+            <p class="service-title-description">OCECO will make your shopping comfy and secure</p>
+            <div class="row">
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#shopping-cart-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">E-Commerce</p>
+                    <p class="service-text-description">Place your order</p>
+                </div>
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#laptop-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">Pack and Proceed Your Order
+                    </p>
+                    <p class="service-text-description">OCECO will proceed and pack your scooter nicely</p>
+                </div>
+                <div class="icon-container--services col-12 col-md-4">
+                    <div class="icon-bg--round">
+                        <svg class="icon icon--shopping-cart">
+                            <use xlink:href="./public/images/icons/service-icon.svg#lock-solid"></use>
+                        </svg>
+                    </div>
+                    <p class="service-text-title">Delivery Security</p>
+                    <p class="service-text-description">We make sure that your Scooters will be delivered to you with
+                        full
+                        protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact-->
+    <div id="order-now"></div>
+    <section class="bg--map">
+        <div class="container">
+            <h2 class="oder-now-title-text">ORDER NOW</h2>
+            <h3 class="oder-now-title-description ">Please fill-in the order information below, our sales
+                manager will contact you within 24 hours</h3>
+            <form action="https://formspree.io/f/mpzovoqv" id="contactForm" name="sentMessage" method="POST">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="name" type="text" name="order-name"
+                                placeholder="Your Name *" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="email" type="email" name="odfer-email"
+                                placeholder="Your Email *" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control order-now-form" id="phone" type="tel" name="order-phone"
+                                placeholder="Your Phone *" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <textarea class="form-control order-now-form order-now-form--textarea" type="address"
+                                id="message" name="order-address" placeholder="Your Shipping Address *"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="index-slogan__btn btn-order-now"> SEND ORDER </button>
+                </div>
+            </form>
+        </div>
+    </section>
     <!-- Social Media Icon -->
     <div class="container container-icons">
         <h3>Find US on Social Media</h3>

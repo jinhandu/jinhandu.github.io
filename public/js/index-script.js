@@ -23,8 +23,8 @@ $("body").scrollspy({
 
 //刷新后页面自动回到顶部
 window.onload = function () {
-  document.documentElement.scrollTop = 0; //ie下
-  document.body.scrollTop = 0; //非ie
+  // document.documentElement.scrollTop = 0; //ie下
+  //document.body.scrollTop = 0; //非ie
 };
 
 //导航栏动画
