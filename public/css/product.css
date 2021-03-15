@@ -1,0 +1,240 @@
+/* Fonts */
+
+@font-face {
+  font-family: "bebas_neue";
+  src: url("./fonts/Bebas_Neue/bebasneue-regular-webfont.woff2") format("woff2"),
+    url("./fonts/Bebas_Neue/bebasneue-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Drop Down Animation */
+.animate {
+  animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+}
+
+@keyframes slideInAnimation {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInAnimation {
+  0% {
+    -webkit-transform: translateY(-2rem);
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideInAnimation;
+  animation-name: slideInAnimation;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: var(--color-navbg);
+}
+.dropdown-item2 {
+  font-size: 2rem;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
+}
+#navbarDropdown,
+.dropdown-item {
+  letter-spacing: 0.1rem;
+  font-family: roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 1rem;
+  white-space: nowrap;
+  backdrop-filter: blur(50px);
+  border-radius: 10px;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  transition: color 0.35s, background-color 0.35s;
+}
+.dropdown-menu {
+  border: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.dropdown-item {
+  width: 90%;
+}
+#navbarDropdown:hover {
+  color: var(--color-primary);
+}
+
+/* Product Title */
+.product-title {
+  position: absolute;
+  font-size: 3rem;
+  left: 40%;
+  margin: 0 auto;
+  font-family: bebas_neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+  letter-spacing: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .product-title {
+    display: none;
+  }
+}
+
+/* Slider */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  margin-top: 10rem;
+  width: 500px;
+  height: 500px;
+}
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 350px;
+    height: 350px;
+  }
+}
+.slides {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.slider__img-container {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+.slider__img {
+  width: 100%;
+  height: 100%;
+}
+/* thumbnail */
+.thumbnails {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnails-inside-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumnail__img-container {
+  padding: 1rem;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  user-select: none;
+  transition: border 0.4s, transform 0.4s;
+}
+.thumnail__img-container:hover {
+  border: 1px solid rgb(159, 159, 159);
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+.thumnail-seleted {
+  border: 1px solid rgb(159, 159, 159);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .thumnail__img-container {
+    width: 60px;
+    height: 60px;
+  }
+  .thumbnails {
+    height: 120px;
+  }
+}
+.thumnail__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Scooter Info */
+/* Info Title */
+.scooter-info-title {
+  color: #000000;
+  font-size: 6rem;
+  text-align: center;
+  border: 1px solid tomato;
+  margin-top: 10rem;
+  font-weight: bold;
+  white-space: normal;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .scooter-info-title {
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: rgb(36, 36, 36);
+  }
+}
+/* Info Color Text */
+.scooter-info-color-text {
+  border: 1px solid red;
+  color: rgb(130, 130, 130);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+/*Info Color Selector */
+.color-selector {
+  height: 50px;
+  margin-top: 1rem;
+  padding: 0;
+  border: 1px solid tomato;
+}
+.color-option {
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: auto 0.2rem;
+  transition: border 0.3s, transform 0.3s;
+}
+.color-option:hover {
+  border: 4px solid rgb(159, 159, 159);
+  transform: scale(1.2);
+}
+.color-seleted {
+  border: 4px solid rgb(159, 159, 159);
+}
+.color-option--black {
+  background-color: black;
+}
+.color-option--golden {
+  background-color: gold;
+}
+.color-option--silver {
+  background-color: silver;
+}
+.color-option--grey {
+  background-color: grey;
+}
+.color-option--red {
+  background-color: red;
+}
