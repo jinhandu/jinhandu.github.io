@@ -16,6 +16,30 @@ $(document).ready(function () {
   setThumbnailbtnClick();
   setSliderData(scooterImgPathArrayBlack);
   scooterColorSelector();
+  $(".btn-info-buy").on("click", function () {
+    window.location.replace("https://www.facebook.com/oceco.se");
+  });
+
+  $(".specification-details").eq(0).html(`
+  Color: Black, White <br>
+  Max: Loading 110KG <br>
+  Motor:  250W Brushless Hub Motor <br>
+  Battery:  <br>
+  Chinese Lithium battery <br>
+  36V 7.8Ah <br>
+  Max Climbing:   ≤20°  <br>
+  Max Speed:  30km/h <br>
+  Max Mileage: 20-35km <br>
+  Charging Time; 3-5h <br>
+  Tire Size:  8.5inch <br>
+  Brake: DISC brake <br>
+  Height of Handle:  100cm <br>
+  Height of Off-ground: 13cm <br>
+  Packing Include:<br>
+   Charger,User manual,tool <br>
+  N.W./ G.W.:  12.1KG/15.2KG <br>
+  Dimensions/Packing Size: 114*19.5*114cm/116*21.5*50cm <br>
+  `);
 });
 
 function setThumbnailbtnClick() {

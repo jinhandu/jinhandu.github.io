@@ -7,6 +7,9 @@
   font-weight: normal;
   font-style: normal;
 }
+.color-primary {
+  color: rgb(59, 183, 76);
+}
 /* Drop Down Animation */
 .animate {
   animation-duration: 0.4s;
@@ -177,20 +180,24 @@
 /* Scooter Info */
 /* Info Title */
 .scooter-info-title {
-  color: #000000;
+  color: black;
   font-size: 6rem;
-  text-align: center;
   margin-top: 10rem;
   font-weight: bold;
   white-space: normal;
   margin-bottom: 0;
 }
+
 @media screen and (max-width: 768px) {
   .scooter-info-title {
     margin-top: 2rem;
     font-size: 4rem;
     color: rgb(36, 36, 36);
   }
+}
+.scooter-info-subtitle {
+  color: #3c3b3b;
+  text-align: center;
 }
 /* Info Color Text */
 .scooter-info-color-text {
@@ -234,4 +241,32 @@
 }
 .color-option--red {
   background-color: red;
+}
+/* Innfo Description */
+.info-description-list {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+/* Info Prive */
+.info-price {
+  margin-left: 3rem;
+  color: #000000;
+  font-weight: bold;
+  text-align: left;
+}
+/* Buy btn */
+.btn-info-buy {
+  border: 1px solid rgb(47, 225, 47);
+  padding: 1rem 8rem;
+}
+/* Specification  */
+.specification-title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: rgb(30, 30, 30);
+}
+.specification-details {
+  color: rgb(110, 110, 115);
 }
