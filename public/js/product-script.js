@@ -12,6 +12,12 @@ function setThumbnailbtnClick() {
   let slides = $(".slides").eq(0);
   for (let i = 0; i < 4; i++) {
     let thumbnailbtn = $(".thumnail__img-container").eq(i);
+    //鼠标滑过取消所有边框
+    thumbnailbtn.on("mouseenter", function () {
+      for (let j = 0; j < 4; j++) {
+        $(".thumnail__img-container").eq(j).removeClass("thumnail-seleted");
+      }
+    });
     thumbnailbtn.on("click", function () {
       for (let j = 0; j < 4; j++) {
         $(".thumnail__img-container").eq(j).removeClass("thumnail-seleted");
@@ -35,14 +41,6 @@ function setDropdownMenuElements() {
     dropdownMenu.prepend(newDropdownMenuItem);
   }
 }
-
-// 阻止用户与滚动视图交互
-document
-  .getElementsByClassName("slider")[0]
-  .addEventListener("mousewheel", function (evt, delta) {
-    evt.preventDefault();
-    evt.stopImmediatePropagation();
-  });
 
 // 设置颜色选择器点击出现边框
 function scooterColorSelector() {

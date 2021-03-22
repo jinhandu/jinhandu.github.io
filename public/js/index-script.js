@@ -6,6 +6,9 @@ $(document).ready(function () {
   setScooterData();
   setUsageSenrioData();
   setVideoPlaylist();
+  $("#send-order-btn-id").on("click", function () {
+    alert("Order Send Success!");
+  });
 });
 
 //点击菜单后自动收回
@@ -87,7 +90,7 @@ function setScooterData() {
     },
     {
       id: "5",
-      imgPath: "./public/images/scooters/OC4B-G/OC4B-G0.jpeg",
+      imgPath: "./public/images/scooters/OC4B-G/OC4B-G-0.jpeg",
       type: "Four Wheels Electric Scooter",
       name: "OCECO OC4B-G",
       price: "29999 SEK",

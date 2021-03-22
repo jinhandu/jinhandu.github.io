@@ -23,11 +23,18 @@
   border: 4px solid rgb(159, 159, 159);
   transform: scale(1.2);
 }
-.color-seleted {
-  border: 4px solid rgb(159, 159, 159);
-}
+
 .color-option--black {
   background-color: black;
+}
+.color-option--green {
+  background-color: rgb(144, 246, 126);
+}
+.color-option--red {
+  background-color: red;
+}
+.color-option--blue {
+  background-color: blue;
 }
 .color-option--golden {
   background-color: gold;
@@ -41,4 +48,10 @@
 .color-option--white {
   border: 1px solid gray;
   background-color: rgb(255, 255, 255);
+}
+.color-customized {
+  color: rgb(103, 103, 103);
+}
+.color-seleted {
+  border: 4px solid rgb(159, 159, 159);
 }

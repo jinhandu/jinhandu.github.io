@@ -567,6 +567,8 @@ h3 {
   background-position: center;
 }
 .order-now-form {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin: 3rem auto;
   height: 6rem;
   transition: box-shadow 0.3s, border 0.3s;

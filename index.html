@@ -114,7 +114,7 @@
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-            <a href="index.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
+            <a href="./product/OC2Pro-G.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
                 <div class="scooter-display-card-insidebox">
                     <div class="scooter-img-flexbox">
                         <div class="scooter-img-container">
@@ -127,7 +127,7 @@
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-            <a href="index.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
+            <a href="./product/OC2R.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
                 <div class="scooter-display-card-insidebox">
                     <div class="scooter-img-flexbox">
                         <div class="scooter-img-container">
@@ -140,7 +140,7 @@
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-            <a href="index.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
+            <a href="./product/OC3B.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
                 <div class="scooter-display-card-insidebox">
                     <div class="scooter-img-flexbox">
                         <div class="scooter-img-container">
@@ -153,7 +153,7 @@
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-            <a href="index.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
+            <a href="./product/OC3R.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
                 <div class="scooter-display-card-insidebox">
                     <div class="scooter-img-flexbox">
                         <div class="scooter-img-container">
@@ -166,7 +166,7 @@
                     <p class="scooter-price">Price: 3999 kr</p>
                 </div>
             </a>
-            <a href="index.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
+            <a href="./product/OC4B-G.html" class="scooter-display-card col-12 col-md-6 col-lg-4">
                 <div class="scooter-display-card-insidebox">
                     <div class="scooter-img-flexbox">
                         <div class="scooter-img-container">
@@ -307,36 +307,36 @@
             <h2 class="oder-now-title-text">ORDER NOW</h2>
             <h3 class="oder-now-title-description ">Please fill-in the order information below, our sales
                 manager will contact you within 24 hours</h3>
-            <form action="https://formspree.io/f/mpzovoqv" name="sentMessage" method="POST">
+            <form action="http://185.120.16.11:3001/send" name="sentMessage" method="POST">
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input class="form-control order-now-form" id="name" type="text" name="order-name"
-                                placeholder="Your Name *" />
+                            <input class="form-control order-now-form" name="customerName" placeholder="Your Name *" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control order-now-form" id="email" type="email" name="odfer-email"
+                            <input class="form-control order-now-form" name="customerEmail"
                                 placeholder="Your Email *" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control order-now-form" id="phone" type="tel" name="order-phone"
+                            <input class="form-control order-now-form" name="customerPhone"
                                 placeholder="Your Phone *" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            <textarea class="form-control order-now-form order-now-form--textarea" type="address"
-                                id="message" name="order-address" placeholder="Your Shipping Address *"></textarea>
+                            <textarea class="form-control order-now-form order-now-form--textarea"
+                                name="customerAddress" placeholder="Your Shipping Address *"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="index-slogan__btn btn-order-now"> SEND ORDER </button>
+                    <button type="submit" class="index-slogan__btn btn-order-now" id="send-order-btn-id"> SEND ORDER
+                    </button>
                 </div>
             </form>
         </div>
     </section>
-    <!-- Social Media Icon -->
+
     <div class="container container-icons">
         <h3>Find US on Social Media</h3>
         <div class="row">

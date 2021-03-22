@@ -281,12 +281,20 @@
           transform: scale(1.2);
 }
 
-.color-seleted {
-  border: 4px solid #9f9f9f;
-}
-
 .color-option--black {
   background-color: black;
+}
+
+.color-option--green {
+  background-color: #90f67e;
+}
+
+.color-option--red {
+  background-color: red;
+}
+
+.color-option--blue {
+  background-color: blue;
 }
 
 .color-option--golden {
@@ -306,12 +314,24 @@
   background-color: white;
 }
 
+.color-customized {
+  color: #676767;
+}
+
+.color-seleted {
+  border: 4px solid #9f9f9f;
+}
+
 .scooter-info-stock {
-  margin: 0;
+  margin-bottom: 1rem;
   padding: 0;
 }
 
 /* Innfo Description */
+.info-description {
+  text-align: justify;
+}
+
 .info-description-list {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -325,6 +345,7 @@
 
 /* Info Price */
 .info-price {
+  margin-top: 2rem;
   margin-left: 3rem;
   color: #000000;
   font-weight: bold;

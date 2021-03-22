@@ -18,7 +18,7 @@ const oc2bData = {
     <li>Unique design</li>
       </ul>
   `,
-  infoPrice: "3999SEK",
+  infoPrice: "3999 SEK",
   infoSpecification: `
     Color: Black, White <br>
     Max: Loading 110KG <br>

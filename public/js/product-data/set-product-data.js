@@ -19,12 +19,12 @@ function setSliderData(scooterImgPathArray) {
 function setInfoData(dataObj) {
   let infoTitleElement = $(".scooter-info-title").eq(0);
   let infoSubtitleElement = $(".scooter-info-subtitle").eq(0);
-  let infoStockStatusElement = $(".scooter-info-stock").eq(0);
+  let infoDescriptionElement = $(".info-description").eq(0);
   let infoPriceElement = $(".info-price").eq(0);
   let infoSpecificationElement = $(".specification-details").eq(0);
   infoTitleElement.text(dataObj.infoTitle);
   infoSubtitleElement.text(dataObj.infoSubtitle);
-  infoStockStatusElement.after(dataObj.infoDescription);
+  infoDescriptionElement.append(dataObj.infoDescription);
   infoPriceElement.html(dataObj.infoPrice);
   infoSpecificationElement.html(dataObj.infoSpecification);
 }
