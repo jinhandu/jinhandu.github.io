@@ -131,9 +131,9 @@ function setUsageSenrioData() {
 function setVideoPlaylist() {
   let prePath = "./public/videos/";
   let playlistFileName = [
-    "index-video-1.WebM",
-    "index-video-2.WebM",
-    "index-video-3.WebM",
+    "index-video-1.mp4",
+    "index-video-2.mp4",
+    "index-video-3.mp4",
   ];
   let indexVideoElement = $("#index-video");
   let playerVideoIndex = 0;

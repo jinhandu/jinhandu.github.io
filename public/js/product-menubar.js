@@ -49,7 +49,6 @@ $(document).ready(function () {
 //设置菜单栏Dropdowm Menu
 function setDropdownMenuElements() {
   let dropdownMenu = $(".dropdown-menu").eq(0);
-
   for (let i = scooterArray.length - 1; i >= 0; i--) {
     let newDropdownMenuItem = `<a class='dropdown-item' href='${scooterArray[i].pageURL}'>${scooterArray[i].name}</a>`;
     dropdownMenu.prepend(newDropdownMenuItem);

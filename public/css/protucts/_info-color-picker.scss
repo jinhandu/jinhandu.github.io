@@ -1,0 +1,44 @@
+// Info Color Picker Title
+.scooter-info-color-text {
+  color: rgb(130, 130, 130);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+// Color Picker
+.color-selector {
+  height: 40px;
+  margin-top: 1rem;
+  padding: 0;
+}
+.color-option {
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: auto 0.2rem;
+  transition: border 0.3s, transform 0.3s;
+}
+.color-option:hover {
+  border: 4px solid rgb(159, 159, 159);
+  transform: scale(1.2);
+}
+.color-seleted {
+  border: 4px solid rgb(159, 159, 159);
+}
+.color-option--black {
+  background-color: black;
+}
+.color-option--golden {
+  background-color: gold;
+}
+.color-option--silver {
+  background-color: silver;
+}
+.color-option--grey {
+  background-color: grey;
+}
+.color-option--white {
+  border: 1px solid gray;
+  background-color: rgb(255, 255, 255);
+}

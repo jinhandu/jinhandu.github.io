@@ -1,0 +1,10 @@
+/* Innfo Description */
+.info-description-list {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .info-description-list {
+    margin-left: 2rem;
+  }
+}
