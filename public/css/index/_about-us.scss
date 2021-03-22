@@ -1,0 +1,10 @@
+/* About Us */
+.about-us-text {
+  font-size: 3rem;
+  text-align: center;
+}
+@media screen and (max-width: 786px) {
+  .about-us-text {
+    font-size: 2rem;
+  }
+}

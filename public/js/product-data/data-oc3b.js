@@ -12,7 +12,7 @@ const oc2bData = {
   The scooter pedals are made of imported maple, and the 8.5 solid tires can be used by people weighing 242 pounds! 500W brushless motor, stable performance, top speed of 15.5 mph, easy to travel over 20 ° slope, powerful!<br>
   The scooter can be folded, small size, lightweight (37 lbs) for easy carrying and storage!Driving 16 miles in full and full speed, vehicle interior There is a waterproof ring, waterproof effect.  
   `,
-  infoPrice: "3999 SEK",
+  infoPrice: "18999 SEK",
   infoSpecification: `
   Color:	Optional <br>
   Max: Loading	120KG<br>

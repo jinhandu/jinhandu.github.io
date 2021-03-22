@@ -79,7 +79,7 @@ function setScooterData() {
       imgPath: "./public/images/scooters/OC3B/OC3B-0.jpg",
       name: "OCECO OC3B",
       type: "Three Wheels Electric Scooter",
-      price: "34999 SEK",
+      price: "18999 SEK",
     },
     {
       id: "4",

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "akaya_telivigalaregular";
+  src: url("../fonts/AkayaTelivigala/akayatelivigala-regular-webfont.woff2")
+      format("woff2"),
+    url("../fonts/AkayaTelivigala/akayatelivigala-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto/roboto-bold-webfont.woff2") format("woff2"),
+    url("../fonts/roboto/roboto-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto/roboto-regular-webfont.woff2") format("woff2"),
+    url("../fonts/roboto/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat/montserrat-bold-webfont.woff2") format("woff2"),
+    url("../fonts/Montserrat/montserrat-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat/montserrat-regular-webfont.woff2")
+      format("woff2"),
+    url("../fonts/Montserrat/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "open_sans";
+  src: url("../fonts/opensans/opensans-bold-webfont.woff2") format("woff2"),
+    url("../fonts/opensans/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "open_sans";
+  src: url("../fonts/opensans/opensans-regular-webfont.woff2") format("woff2"),
+    url("../fonts/opensans/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

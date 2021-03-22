@@ -1,0 +1,55 @@
+/* Order Now */
+.oder-now-title-text,
+.oder-now-title-description {
+  margin: 0;
+  padding: 0;
+}
+.oder-now-title-text {
+  padding-top: 10rem;
+  color: #ffffff;
+}
+.oder-now-title-description {
+  margin-bottom: 6rem;
+  white-space: normal;
+  color: rgb(187, 187, 187);
+}
+.bg--map {
+  background-color: #212529;
+  background-image: url("/public/images/background/map-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.order-now-form {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 3rem auto;
+  height: 6rem;
+  transition: box-shadow 0.3s, border 0.3s;
+  padding-left: 1.5rem;
+}
+.order-now-form[type="text"],
+.order-now-form[type="email"],
+.order-now-form[type="tel"],
+.order-now-form[type="address"] {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+}
+.order-now-form::placeholder {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.order-now-form:focus {
+  border-color: var(--color-primary);
+  border-radius: 3px;
+  border: 2px solid var(--color-primary);
+  outline: 0;
+  box-shadow: 3px 5px 12px 8px rgba(59, 183, 76, 0.55);
+}
+textarea.order-now-form--textarea {
+  height: 24rem;
+}
+.btn-order-now {
+  border: 1px solid var(--color-primary);
+  margin-bottom: 5rem;
+}

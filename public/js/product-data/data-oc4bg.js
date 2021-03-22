@@ -43,7 +43,6 @@ const oc2bData = {
   Packing Size:128*71*70cm<br>
   front lights/rear lights:Front Lights & Brake Lights <br>
   N.W./ G.W. (kg):36KG/46KG<br>
-  Price (Incl. VAT):29999kr<br>
     `,
 };
 $(document).ready(function () {
