@@ -307,7 +307,7 @@
             <h2 class="oder-now-title-text">ORDER NOW</h2>
             <h3 class="oder-now-title-description ">Please fill-in the order information below, our sales
                 manager will contact you within 24 hours</h3>
-            <form action="http://185.120.16.11:3001/send" name="sentMessage" method="POST">
+            <form action="http://185.120.16.11:3003/send" name="sentMessage" method="POST">
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -321,11 +321,25 @@
                             <input class="form-control order-now-form" name="customerPhone"
                                 placeholder="Your Phone *" />
                         </div>
+                        <div class="form-group">
+                            <select class="form-control  order-now-form order-now-scooter-model" name="scooterType">
+                                <option value="">Please Select Scooter Model * </option>
+
+                            </select>
+                            <select class="form-control order-now-form order-now-scooter-quantity"
+                                name="scooterQuantity">
+                                <option value="">Quantity*</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
                             <textarea class="form-control order-now-form order-now-form--textarea"
                                 name="customerAddress" placeholder="Your Shipping Address *"></textarea>
+                        </div>
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <textarea class="form-control order-now-form order-now-form--textarea"
+                                name="customerRemarks" placeholder="Additional Remark Information *"></textarea>
                         </div>
                     </div>
                 </div>
@@ -371,7 +385,7 @@
     </div>
     <script src="public/frameworks/jquerry-3.6.0/jquery-3.6.0.min.js"></script>
     <script src="public/frameworks/bootstrap-4.6.0/js/bootstrap.js"></script>
-    <script src="public/js/index-script.js"></script>
+    <script src="public/js/index-script.js" defer></script>
     <script src="//code.tidio.co/d9hsnt4yi0vivdnr1r2oqjs1qadnrnpm.js" async></script>
 </body>
 
